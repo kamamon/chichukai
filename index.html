@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style></head><body><title>地中海覇道</title>
+<!doctype html><html lang="ja"><head><link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1320x2868.png"><link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1290x2796.png"><link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1206x2622.png"><link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1179x2556.png"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1284x2778.png"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1170x2532.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1242x2688.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="icons/splash/splash-1125x2436.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="icons/splash/splash-828x1792.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="icons/splash/splash-750x1334.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style></head><body><title>地中海覇道</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#0e1614">
 <meta name="mobile-web-app-capable" content="yes">
@@ -746,6 +746,23 @@ table.tbl th{color:var(--fg2);font-weight:500;font-size:12px}
 .modal.fpick > .note,.modal.fbook .note{color:#5b4b31}
 .modal .fb-it{background:rgba(255,250,232,.5);border-color:#b39c6a;color:var(--ink)}.modal .fb-it.on{border-color:#8a6d2f}
 .modal .fb-it small{color:#6b5a3a}.modal .fb-it .fb-pic{background:repeating-linear-gradient(45deg,#d7c9a0 0 6px,#cdbd92 6px 12px)}
+
+/* 外で作った絵（assets/） */
+#scr-title .title-art{position:absolute;inset:0;z-index:0;pointer-events:none}
+#scr-title .title-art img{width:100%;height:100%;object-fit:cover;display:block}
+#scr-title.has-art::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,10,9,.62) 0%,rgba(6,10,9,.18) 30%,rgba(6,10,9,.30) 58%,rgba(6,10,9,.82) 100%)}
+#scr-title.has-art .title-map{display:none}
+#scr-title.has-art .title-wrap{z-index:1}
+#scr-title.has-art .title-note{text-shadow:0 1px 3px rgba(0,0,0,.9)}
+#scr-title.has-art .btn.ghost{background:rgba(8,12,11,.5);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.cseal.em{background:none!important;box-shadow:none;border-radius:50%;padding:0;overflow:visible}
+.cseal.em img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.55))}
+.pick .scn-art{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;display:block;margin-bottom:4px;background:#1d2d28}
+.pick.has-ban{padding-right:58px}
+.pick .pick-ban{position:absolute;right:8px;top:8px;height:64px;width:auto;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.ch.ch-im{display:grid;grid-template-columns:60px 1fr;column-gap:12px;align-items:center}
+.ch.ch-im .ch-img{grid-row:span 2;width:60px;height:60px;object-fit:cover;border-radius:6px;background:#e9e0c8}
+.fcard .farch{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;display:block;margin-bottom:4px;background:#1d2d28}
 </style>
 <div id="app">
   <section id="scr-title" class="screen"></section>
@@ -758,6 +775,7 @@ table.tbl th{color:var(--fg2);font-weight:500;font-size:12px}
 <div id="toast-root" aria-live="polite"></div>
 <script>
 const DATA_JSON = {"hist":[["ファビウス","rome","kuns",55,90,92,88,80,62,["tq_cunctator","teppeki","gunryaku","tx_patient","to_noble"],"chi",-203,null,["kenjin","jinchi","kanchou","shingari","chiri","roujou"],-233],["フルウィウス","rome","josh",70,80,74,84,64,60,["houka","tu_sie2","tx_cruel","tc_disc1"],"bal",-205,null,["hyorou","jinchi","tousekiki","chikadou"],-237],["プブリウス・スキピオ","rome","shog",72,80,78,75,78,45,["kobu","tx_honor","to_noble","tp_dip1"],"bal",-210,null,["gyorin","kenjin","sekkou"],-222,[[-217,"dais"]]],["グナエウス・スキピオ","rome","shog",75,82,72,66,76,47,["teppeki","tx_steady","tp_dip1","to_noble"],"bal",-210,null,["kenjin","gyorin","kyoba"],-222],["センプロニウス","rome","shog",76,68,55,60,62,42,["totsu","tx_proud","tx_hot"],"ins",-210,null,["gyorin","tsuigeki"],-222],["マルケッルス","rome","shog",93,86,70,60,82,50,["tq_gladius","moushou","ikkigake","td_spear2","tx_brave"],"ins",-207,null,["housi","tsuigeki","tousekiki","chikadou","shuuchuu"],-226,[[-215,"dais"]]],["フラミニウス","rome","shog",70,62,56,76,80,57,["totsu","tv_road","tx_hot","to_poor"],"ins",-216,null,["gyorin","kyougun"],-232],["アエミリウス・パウルス","rome","shog",74,80,76,72,74,52,["teppeki","tx_careful","to_noble"],"bal",-215,null,["kenjin","gyorin","houen"],-222],["ウァッロ","rome","goz",60,52,56,70,74,40,["benzetsu","tx_boast","to_merchant"],"ins",-200,null,["gyorin","gekibun"],-222,[[-216,"shog"]]],["ミヌキウス","rome","goz",76,64,52,50,60,47,["totsu","tx_hot","tx_ambition"],"ins",-215,null,["tsuigeki"],-222],["グラックス","rome","goz",74,80,72,70,82,32,["tq_volones","jinbou","tu_mil2","tx_generous"],"bal",-211,null,["fukuhei","gekibun","kenjin"],-220,[[-215,"shog"]]],["クラウディウス・ネロ","rome","senn",78,86,82,60,62,33,["tq_nero","shinsoku","tb_fat2","tx_cold","to_noble"],"bal",-195,null,["kyougun","ukai","tsuigeki","kanchou"],-220,[[-214,"goz"],[-212,"shog"]]],["リウィウス","rome","shog",70,80,74,64,56,36,["teppeki","tx_vengeful","tx_stubborn"],"bal",-200,null,["kenjin","kakuyoku"],-222],["アッピウス・クラウディウス","rome","goz",70,74,66,62,60,37,["chikujo","tu_sie1","to_noble"],"bal",-210,null,["hyorou","tousekiki"],-222,[[-213,"shog"]]],["スキピオ","rome","hyak",80,98,95,86,96,18,["tq_africanus","gunryaku","kobu","jinbou","ty_handsome","to_noble"],"chi",-182,null,["kakuyoku","ukai","yashuu","kakei","kanchou","houi","sanpei"],-219,[[-216,"senn"],[-213,"goz"],[-210,"dais"]]],["ラエリウス","rome","hyak",80,84,76,72,80,17,["tq_laelius","kiba","tx_loyal"],"bal",-160,null,["ukai","shuuchuu","tsuigeki"],-219,[[-216,"senn"],[-210,"goz"],[-205,"shog"]]],["ルキウス・スキピオ","rome","senn",70,72,64,66,70,10,["kobu","to_noble","tx_proud"],"bal",-180,null,["gyorin","kenjin"],-210,[[-207,"goz"],[-193,"shog"],[-190,"dais"]]],["カトー","rome","hyak",72,74,86,94,58,16,["tq_cato","benzetsu","tp_frank2","tv_thrift2","tx_stubborn","to_farmer","ts_nong"],"chi",-149,null,["kenjin","ukai","chiri"],-217,[[-214,"senn"],[-204,"gshib"],[-198,"goz"],[-195,"shog"]]],["フラミニヌス","rome","senn",70,86,86,88,88,11,["tq_liberator","benzetsu","tp_dip2","tx_ambition"],"chi",-174,null,["ukai","kanchou","gekibun","kenjin"],-211,[[-205,"goz"],[-198,"dais"]]],["アエミリウス・パウルス（子）","rome","senn",74,92,86,82,80,11,["tq_pydna","gunryaku","teppeki","tx_clean","to_noble"],"chi",-160,null,["kenjin","shingari","kanchou","kouchi","houi"],-211,[[-191,"shog"],[-168,"dais"]]],["アキリウス・グラブリオ","rome","senn",72,80,72,72,68,16,["totsu","to_poor"],"bal",-175,null,["gyorin","ukai"],-210,[[-201,"goz"],[-191,"dais"]]],["スキピオ・ナシカ","rome","senn",68,78,82,84,78,-12,["tq_nasica","benzetsu","ts_ru","to_noble"],"chi",-141,null,["ukai","kenjin"],-189,[[-168,"goz"],[-162,"shog"]]],["小スキピオ","rome","senn",86,94,90,84,88,-33,["tq_aemilianus","gunryaku","td_sword2","ts_ru","to_noble"],"chi",-129,null,["hyorou","chikadou","tousekiki","kanchou","houi","gunritsu"],-168,[[-151,"goz"],[-149,"shog"],[-147,"dais"]]],["ムンミウス","rome","goz",72,76,62,66,62,-18,["totsu","tb_loot","to_poor"],"ins",-140,null,["gyorin","tsuigeki"],-160,[[-146,"dais"]]],["ポピリウス・ラエナス","rome","goz",74,74,80,78,70,-8,["tq_laenas","tp_dip2","tx_bold"],"chi",-150,null,["kenjin"],-180,[[-172,"shog"]]],["ラエウィヌス","rome","shog",72,80,78,72,70,42,["suiren","tp_dip1","to_noble"],"bal",-200,null,["kenjin","kousui","naiou"],-222,[[-210,"dais"]]],["マルキウス","rome","senn",78,82,74,56,80,32,["kobu","tb_rally","tx_tenacious"],"bal",-200,null,["fukuhei","gekibun","yashuu"],-222,[[-211,"goz"]]],["トルクァトゥス","rome","shog",74,82,70,66,64,52,["tc_disc2","tx_stubborn","to_noble"],"bal",-202,null,["kenjin","gunritsu"],-235],["ポストゥミウス","rome","shog",70,72,62,62,62,45,["tx_careful","to_noble"],"bal",-215,null,["gyorin"],-234],["リキニウス・クラッスス","rome","daij:hojo",40,60,80,84,78,22,["tp_rite2","ty_handsome","tv_comm1","to_noble"],"chi",-183,null,[],-220],["ウァレリウス・フラックス","rome","kenr",54,66,72,82,72,22,["tx_honest","tp_admin1","to_noble"],"chi",-180,null,[],-201],["エンニウス","rome","hyak",62,50,88,60,80,21,["tp_letter2","ts_za","to_poor"],"chi",-169,null,["gekibun"],-204],["マンリウス・ウルソ","rome","goz",72,76,66,60,60,13,["tx_greedy","tb_loot","to_noble"],"ins",-170,null,["tsuigeki","kouchi"],-205,[[-195,"shog"],[-189,"dais"]]],["エウメネス二世","rome","shog",78,82,80,84,80,3,["kiba","tp_dip1","to_royal"],"bal",-159,null,["ukai","shuuchuu","kibasha"],-197],["ティベリウス・グラックス","rome","senn",72,80,76,84,80,-1,["tp_dip2","tx_honest","jinbou"],"bal",-154,null,["kenjin","gekibun"],-200,[[-182,"goz"],[-180,"shog"]]],["メテッルス","rome","senn",74,84,76,78,72,-8,["teppeki","to_noble","tx_steady"],"bal",-115,null,["kenjin","gyorin"],-180,[[-168,"goz"],[-148,"dais"]]],["スルピキウス・ガッルス","rome","gunshi",50,66,90,76,70,-8,["ts_geo","tt_wind2","tp_learn2"],"chi",-150,null,["kansoku","kanchou"],-180],["ラエリウス（子）","rome","senn",70,76,84,80,80,-30,["ts_ru","tp_letter1","tx_calm"],"chi",-123,null,["kanchou"],-168,[[-147,"goz"]]],["大ハンノ","carth","kuns",50,72,82,86,72,62,["tq_hanno","rizai","benzetsu","tx_jealous","to_noble"],"chi",-190,null,["kenjin","roujou"],-250],["ハスドルバル・ハエドゥス","carth","josh",40,50,76,82,72,50,["benzetsu","tp_dip1","tx_peace"],"chi",-195,null,[],-230],["ハンニバル","carth","dais",86,100,99,88,96,29,["tq_hannibal","gunryaku","fukuhei","kobu","tc_love2","tc_plan2"],"chi",-182,null,["houi","fukuhei","kakuyoku","gitai","yashuu","kanchou","youdou","ukai","kakei"],-229,[[-229,"goz"],[-224,"shog"],[-221,"dais"]]],["ハスドルバル","carth","shog",82,86,80,72,82,27,["tq_hasdrubal","gunryaku","kobu","tx_tenacious"],"bal",-206,null,["kakuyoku","gitai","kenjin","shingari","kyougun","ukai"],-228,[[-228,"senn"],[-221,"goz"],[-219,"shog"]]],["マゴ","carth","goz",86,82,76,62,78,25,["tq_mago","fukuhei","totsu","tx_daring"],"ins",-202,null,["fukuhei","gisou","yashuu","tsuigeki"],-226,[[-226,"senn"],[-219,"goz"],[-215,"shog"]]],["マハルバル","carth","goz",88,85,72,42,70,37,["tq_maharbal","kiba","totsu","tu_lcav2"],"ins",-203,null,["tsuigeki","ukai","shuuchuu","kibasha","taihai"],-225],["ハンノ（ボミルカルの子）","carth","goz",80,80,74,52,64,32,["suiren","kiba","tt_water1"],"bal",-200,null,["kousui","ukai","sekkou"],-225],["ハスドルバル（ギスコの子）","carth","goz",72,80,80,76,74,37,["gunryaku","tx_cunning","tp_dip1","to_noble"],"chi",-201,null,["kakuyoku","jinchi","kenjin"],-225,[[-214,"shog"]]],["ボミルカル","carth","goz",70,74,66,60,60,42,["suiren","to_sailor"],"bal",-205,null,["kousui"],-230],["ヒミルコ","carth","goz",72,76,68,58,58,42,["teppeki","tb_def1"],"bal",-212,null,["kenjin","jinchi"],-230,[[-213,"shog"]]],["ムットゥネス","carth","senn",86,82,76,42,70,27,["kiba","fukuhei","tx_ambition","to_exile"],"ins",-190,null,["ukai","yashuu","tsuigeki"],-220,[[-212,"goz"]]],["カルタロ","carth","senn",80,74,62,48,58,37,["kiba","tu_hcav2"],"ins",-208,null,["shuuchuu","tsuigeki"],-225,[[-216,"goz"]]],["インディビリス","carth","goz",82,72,60,54,78,42,["sangaku","to_mountain","tx_ambition"],"ins",-205,"mount",["kouchi","chiri","fukuhei"],-230],["ハスドルバル・カルウス","carth","goz",70,72,66,56,58,40,["tx_careful","tb_def1"],"bal",-214,null,["kenjin"],-225],["ハンノ（ハミルカルの子）","carth","senn",74,70,62,50,60,28,["kiba","tx_hot"],"ins",-203,null,["shuuchuu"],-222,[[-210,"goz"]]],["ハスドルバル（最後の将）","carth","goz",76,78,66,58,66,-18,["tt_city2","tx_stubborn","tx_cruel"],"ins",-146,null,["roujou","nettou","gaimon","shutsu"],-152,[[-149,"shog"],[-147,"dais"]]],["シュファクス","numi","kuns",80,78,70,74,76,42,["tq_syphax","kiba","tx_ambition","to_royal"],"ins",-202,null,["ukai","kibasha","tsuigeki"],-230],["ガイア","numi","josh",70,74,68,74,72,57,["kiba","to_royal","ty_veteran"],"bal",-207,null,["ukai"],-245],["マシニッサ","numi","goz",92,90,80,82,88,20,["tq_masinissa","kiba","totsu","ty_longlife","td_ride2"],"ins",-147,null,["ukai","tsuigeki","kibasha","shuuchuu","taihai","fukuhei"],-222,[[-213,"shog"]]],["ウェルミナ","numi","senn",78,72,62,56,60,7,["kiba","to_royal"],"ins",-190,null,["ukai","tsuigeki"],-207,[[-203,"goz"]]],["ソフォニスバ","numi","daij:sosei",20,30,82,70,98,10,["tq_sophonisba","ty_mi2","to_noble"],"chi",-202,null,[],-205],["ミキプサ","numi","daij",50,66,78,86,74,-18,["tv_agri2","ts_za","to_royal"],"chi",-118,null,[],-175],["グルッサ","numi","goz",82,80,66,60,72,-23,["kiba","to_royal","tp_dip1"],"ins",-140,null,["ukai","tsuigeki","kibasha"],-172],["フィリッポス五世","mace","kuns",82,84,80,76,84,20,["tq_philip","kobu","totsu","benzetsu","tk_ba","to_royal"],"ins",-178,null,["houen","kyougun","yashuu","kanchou","gisou"],-221],["アラトス","mace","josh",50,70,86,90,82,53,["tq_aratus","benzetsu","jinbou","tp_dip2"],"chi",-212,null,["yashuu","gisou","naiou","kanchou"],-251],["デメトリオス（ファロスの）","mace","gunshi",72,72,84,60,70,40,["tq_pharos","benzetsu","tx_ambition","to_exile"],"chi",-214,null,["naiou","yashuu","rikan_b"],-229],["タウリオン","mace","shog",76,80,70,70,64,47,["teppeki","tx_cunning"],"bal",-205,null,["kenjin","houen"],-225],["ヘラクレイデス","mace","goz",60,70,84,64,56,32,["suiren","tp_plot2","tx_cunning","to_exile"],"chi",-197,null,["kakei","naiou","kousui"],-210],["フィロポイメン","mace","goz",86,90,84,78,86,35,["tq_philopoemen","gunryaku","kiba","tc_drill2","tx_honor"],"bal",-182,null,["housi","yashuu","chiri","kyouren","fukuhei"],-235,[[-209,"shog"]]],["スコパス","mace","goz",82,80,70,58,64,47,["totsu","tx_greedy","tu_mount1"],"ins",-196,null,["housi","tsuigeki"],-225],["ナビス","mace","goz",80,76,74,72,62,30,["tx_cruel","tv_recruit2","to_noble"],"ins",-191,null,["roujou","kenjin"],-207],["ペルセウス","mace","goz",74,80,78,74,66,-6,["tq_perseus","teppeki","tx_careful","to_royal"],"bal",-166,null,["houen","kenjin","jinchi","roujou"],-197,[[-190,"shog"]]],["デメトリオス（王子）","mace","daij",66,70,76,78,86,-11,["tp_dip2","to_hostage","tx_honest","ty_mi2"],"bal",-179,null,[],-191],["ポリュビオス","mace","senn",60,72,96,84,80,-18,["tq_polybius","tp_learn2","ts_hist","tx_curious"],"chi",-118,null,["kanchou","chiri","sekkou"],-182,[[-170,"goz"]]],["アンティオコス三世","sele","kuns",82,88,84,84,90,23,["tq_megas","kobu","jinbou","kiba","tk_ba","to_royal"],"bal",-186,null,["shuuchuu","kibasha","sensha","kakuyoku","tsuigeki"],-223],["ゼウクシス","sele","josh",72,80,82,85,70,47,["rizai","teppeki","tp_admin1"],"chi",-188,null,["kenjin","jinchi"],-225],["アカイオス","sele","shog",84,86,80,76,84,37,["gunryaku","kobu","tx_ambition","to_royal","tt_city2"],"bal",-212,null,["roujou","kenjin","kakuyoku"],-228],["テオドトス","sele","goz",86,78,74,50,60,42,["ikkigake","fukuhei","td_hidden2","tx_daring","to_exile"],"ins",-210,null,["yashuu","zanshu"],-225],["ニカルコス","sele","goz",74,76,66,56,60,45,["teppeki","tu_phal1"],"bal",-205,null,["houen"],-225],["アンティパトロス","sele","goz",72,76,70,66,66,27,["kiba","to_royal"],"bal",-185,null,["shuuchuu","ukai"],-222,[[-190,"shog"]]],["ポリュクセニダス","sele","goz",66,78,76,60,60,22,["suiren","tt_water1","to_exile"],"bal",-185,null,["kousui"],-195],["セレウコス四世","sele","goz",60,66,70,78,66,0,["tv_thrift1","to_royal","tx_careful"],"bal",-174,null,["kenjin"],-200,[[-196,"shog"]]],["アンティオコス四世","sele","daij",72,76,82,76,80,-3,["tq_epiphanes","tx_passion","to_hostage"],"ins",-164,null,["sensha","shuuchuu","gekibun"],-197],["ヘリオドロス","sele","daij",30,50,80,76,60,7,["tp_court2","tx_ambition","tx_traitor"],"chi",-175,null,[],-195],["プトレマイオス四世","ptol","kuns",40,45,62,40,60,26,["tk_an","tx_drinker","to_royal"],"bal",-203,null,[],-222],["ソシビオス","ptol","josh",40,72,92,90,70,48,["tq_sosibios","benzetsu","rizai","tp_plot2"],"chi",-203,null,["kanchou","rikan_b"],-235],["アガトクレス","ptol","daij:rouchu",30,40,74,70,62,32,["tp_court2","tx_ambition","tx_greedy","tp_slander"],"chi",-202,null,[],-222],["アンドロマコス","ptol","shog",76,82,72,64,66,45,["teppeki","renpei"],"bal",-210,null,["houen","kenjin"],-225],["ポリュクラテス","ptol","shog",78,80,74,72,70,32,["kiba","tv_order1"],"bal",-180,null,["shuuchuu","ukai"],-222],["エケクラテス","ptol","goz",80,76,66,50,60,40,["kiba","tu_hcav1"],"ins",-205,null,["shuuchuu"],-225],["フォクシダス","ptol","goz",76,74,66,50,58,40,["renpei","tu_phal1"],"bal",-205,null,["houen"],-225],["アルシノエ三世","ptol","daij:sosei",30,50,72,70,92,28,["tq_arsinoe","jinbou","to_royal"],"bal",-203,null,[],-222],["アリストメネス","ptol","daij",40,60,80,86,70,30,["tk_xian","tx_honest"],"chi",-192,null,[],-205],["プトレマイオス五世","ptol","kuns",40,50,62,66,70,-8,["to_royal","tx_magnanimous"],"bal",-180,null,[],-204],["クレオパトラ一世","ptol","daij:sosei",30,50,80,84,88,-14,["tp_dip2","to_royal","tx_calm"],"chi",-176,null,[],-193],["ヒエロン二世","syra","kuns",55,80,90,95,90,88,["tq_hiero","jinbou","rizai","chikujo","tk_ming"],"chi",-214,null,["roujou","kenjin","gaimon"],-275],["ゲロン","syra","josh",60,66,70,76,70,48,["nousei","to_royal"],"bal",-216,null,["kenjin"],-250],["アルキメデス","syra","daij:shofu",20,50,100,60,70,69,["tq_archimedes","chikujo","ty_genius","tp_learn2","ts_mo"],"chi",-211,null,["roujou","nettou","gaimon","tousekiki","sandan","kyokusha"],-264],["ヒエロニュモス","syra","daij:sosei",44,40,44,38,50,13,["tk_bao","tx_proud","to_royal"],"ins",-213,null,[],-216],["アドラノドロス","syra","daij",46,56,72,70,60,37,["tx_ambition","tp_court1","to_inlaw"],"chi",-213,null,[],-230],["ヒッポクラテス","syra","goz",76,76,72,60,66,32,["kobu","tx_ambition","to_exile"],"ins",-212,null,["yashuu","kenjin"],-215,[[-214,"shog"]]],["エピキュデス","syra","goz",72,72,78,64,62,30,["fukuhei","benzetsu","tp_plot1"],"chi",-210,null,["roujou","naiou"],-215,[[-214,"shog"]]]],"scenarios":[{"id":"p264","year":-264,"n":"第一次ポエニ戦争","sub":"前264年","d":"メッサナをめぐり、ローマとカルタゴがシキリアで初めて戦う。シュラクサイのヒエロン二世はまだカルタゴの側。海を知らないローマは、船を一から造らねばならない。","owners":{"sardinia":"carth","corsica":"carth","lilybaeum":"carth","agrigentum":"carth","phoenicia":"ptol","athenae":"ptol","sparta":"ptol"},"dead":[],"rulers":{"rome":"アッピウス・カウデクス","mace":"アンティゴノス二世","sele":"アンティオコス一世","ptol":"プトレマイオス二世","syra":"ヒエロン二世"},"joshes":{"rome":"マニウス・ウァレリウス"},"wars":[["rome","carth"],["rome","syra"],["mace","ptol"]],"allies":[["carth","syra"]],"rel":[["rome","ptol",30],["sele","ptol",-40],["mace","sele",20],["carth","numi",10],["rome","mace",0],["carth","ptol",10]],"boost":{"carth":{"gold":1.5}},"locs":{"アッピウス・カウデクス":"messana","ヒエロン二世":"leontini","ハンノ（老将）":"agrigentum","ハンニバル（ギスコの子）":"agrigentum","レグルス":"roma","ドゥイリウス":"roma","ハミルカル・バルカ":"carthago","クサンティッポス":"carthago","アンティゴノス二世":"corinth","クレモニデス":"athenae","アルキメデス":"syracusae"},"extra":[["アッピウス・カウデクス","rome","kuns",66,70,66,70,64,92,["to_noble","tx_bold"],"bal",-250,null,["gyorin","kousui"]],["マニウス・ウァレリウス","rome","josh",70,76,70,74,70,92,["tp_dip1","to_noble"],"bal",-240,null,["kenjin"]],["ドゥイリウス","rome","goz",74,78,72,66,72,82,["tq_duilius","suiren","to_poor"],"bal",-230,null,["kousui","shuuchuu"],null,[[-260,"shog"]]],["レグルス","rome","shog",80,80,66,66,80,89,["tq_regulus","totsu","tx_honor"],"ins",-250,null,["gyorin","tsuigeki"],null,[[-256,"dais"]]],["ルタティウス・カトゥルス","rome","senn",70,82,76,72,70,72,["tq_catulus","renpei","to_noble"],"bal",-230,null,["kenjin","kousui"],null,[[-245,"shog"],[-242,"dais"]]],["クラウディウス・プルケル","rome","senn",72,66,60,56,60,72,["tx_proud","tx_hot","to_noble"],"ins",-246,null,["gyorin"],null,[[-250,"shog"]]],["ハンノ（老将）","carth","dais",70,76,70,66,66,82,["teppeki","ty_veteran"],"bal",-250,null,["kenjin","houen"]],["ハンニバル（ギスコの子）","carth","shog",72,72,68,60,60,82,["tt_city2","suiren"],"bal",-258,null,["roujou","kousui"]],["クサンティッポス","carth","goz",82,90,84,60,72,77,["tq_xanthippus","gunryaku","tu_chr2","to_exile"],"chi",-240,null,["houen","kakuyoku","sensha","ukai"],null,[[-255,"dais"]]],["ハミルカル・バルカ","carth","senn",86,94,90,82,90,61,["tq_hamilcar","fukuhei","tc_love2","tx_vengeful","sangaku"],"chi",-227,null,["fukuhei","yashuu","chiri","kouchi","gisou"],null,[[-250,"goz"],[-247,"dais"]]],["アンティゴノス二世","mace","kuns",70,82,84,84,80,101,["ts_ru","tx_patient","to_royal","tk_ming"],"chi",-239,null,["houen","kenjin","roujou"]],["アンティオコス一世","sele","kuns",72,78,76,76,76,106,["tu_chr2","to_royal"],"bal",-261,null,["sensha","houen"]],["プトレマイオス二世","ptol","kuns",40,56,86,92,84,90,["tk_ming","rizai","tv_trade2","to_royal"],"chi",-246],["クレモニデス","ptol","goz",60,66,80,76,80,82,["benzetsu","ts_ru","to_exile"],"chi",-240,null,["roujou"]]]},{"id":"start","year":-218,"n":"ハンニバル、アルペスを越える","sub":"前218年","d":"サグントゥムが落ち、ハンニバル戦争がはじまる。ハンニバルは戦象を連れてアルペスを越え、イタリアをめざす。迎え撃つのは執政官スキピオと十八歳の息子。東ではラフィアの決戦が近い。","default":true,"locs":{"ハンニバル":"cartnova","ハスドルバル":"cartnova","マゴ":"cartnova","マハルバル":"saguntum","ハンノ（ボミルカルの子）":"saguntum","カルタロ":"saguntum","ハスドルバル（ギスコの子）":"gades","インディビリス":"ilergetes","ムットゥネス":"carthago","プブリウス・スキピオ":"massilia","スキピオ":"massilia","ラエリウス":"massilia","グナエウス・スキピオ":"emporiae","マルキウス":"emporiae","センプロニウス":"lilybaeum","フラミニウス":"ariminum","アエミリウス・パウルス":"illyria","トルクァトゥス":"sardinia","ラエウィヌス":"tarentum","マルケッルス":"roma","アンティオコス三世":"phoenicia","テオドトス":"phoenicia","ニカルコス":"phoenicia","アンティパトロス":"phoenicia","アカイオス":"lydia","ゼウクシス":"seleucia","アンドロマコス":"pelusium","ポリュクラテス":"pelusium","エケクラテス":"pelusium","フォクシダス":"pelusium","フィリッポス五世":"pella","アラトス":"achaea","フィロポイメン":"achaea","タウリオン":"corinth","スコパス":"aetolia","デメトリオス（ファロスの）":"epirus","シュファクス":"siga","ガイア":"cirta","マシニッサ":"cirta"}},{"id":"africa204","year":-204,"n":"スキピオ、アフリカへ","sub":"前204年","d":"ハンニバルはなお南イタリアに立てこもる。ヒスパニアを征したスキピオは、シキリアからアフリカへ渡る。ヌミディアの二人の王は、カルタゴとローマに分かれた。","owners":{"cartnova":"rome","castulo":"rome","saguntum":"rome","celtiberia":"rome","ilergetes":"rome","lusitania":"rome","gades":"rome","bruttium":"carth","liguria":"carth","syracusae":"rome","leontini":"rome","phoenicia":"ptol"},"dead":["syra"],"rulers":{"rome":"ファビウス","carth":"大ハンノ","numi":"シュファクス","mace":"フィリッポス五世","sele":"アンティオコス三世","ptol":"プトレマイオス四世"},"wars":[["rome","carth"],["rome","numi"]],"allies":[["carth","numi"]],"rel":[["rome","mace",-20],["rome","ptol",30],["sele","ptol",-40],["mace","sele",30],["carth","mace",10]],"moves":{"マシニッサ":["rome","shog","lilybaeum"]},"boost":{"carth":{"troops":1.4,"gold":1.5,"wall":10},"rome":{"troops":0.6,"only":["cartnova","castulo","saguntum","celtiberia","ilergetes","lusitania","gades"]}},"locs":{"ハンニバル":"bruttium","マゴ":"liguria","スキピオ":"lilybaeum","ラエリウス":"lilybaeum","カトー":"lilybaeum","ハスドルバル（ギスコの子）":"utica","シュファクス":"cirta","ソフォニスバ":"cirta","ハンノ（ハミルカルの子）":"utica","マハルバル":"bruttium","フィリッポス五世":"pella","アンティオコス三世":"antiochia","クラウディウス・ネロ":"lucania","リウィウス":"etruria"}},{"id":"antiochus192","year":-192,"n":"アンティオコス大王とハンニバル","sub":"前192年","d":"ローマは「ギリシアの自由」を宣言した。アンティオコス大王が、亡命の将ハンニバルを連れてギリシアへ渡ろうとしている。ローマではスキピオとカトーが争う。","owners":{"cartnova":"rome","castulo":"rome","saguntum":"rome","celtiberia":"rome","ilergetes":"rome","lusitania":"rome","gades":"rome","baleares":"rome","syracusae":"rome","leontini":"rome","pergamon":"rome","thessalia":"rome","euboea":"rome","athenae":"rome","corinth":"rome","achaea":"rome","sparta":"rome","aetolia":"rome","sicca":"numi","emporia":"numi","ionia":"sele","caria":"sele","lycia":"sele","thracia":"sele","judaea":"sele","damascus":"sele","gaza":"sele"},"dead":["syra"],"rulers":{"rome":"スキピオ","numi":"マシニッサ","mace":"フィリッポス五世","sele":"アンティオコス三世","ptol":"プトレマイオス五世"},"joshes":{"rome":"カトー"},"wars":[],"allies":[["rome","mace"],["rome","numi"]],"rel":[["rome","sele",-40],["sele","ptol",30],["carth","rome",-10],["carth","numi",-40],["sele","carth",20],["rome","ptol",40],["mace","sele",-10]],"moves":{"ハンニバル":["sele","gunshi","ionia"]},"boost":{"sele":{"troops":1.3,"gold":1.5},"rome":{"troops":0.5,"only":["cartnova","castulo","saguntum","celtiberia","ilergetes","lusitania","gades","baleares","pergamon","thessalia","euboea","athenae","corinth","achaea","sparta","aetolia"]}},"locs":{"アンティオコス三世":"ionia","ポリュクセニダス":"ionia","ゼウクシス":"lydia","セレウコス四世":"thracia","スキピオ":"roma","カトー":"roma","フラミニヌス":"corinth","アキリウス・グラブリオ":"thessalia","エウメネス二世":"pergamon","マシニッサ":"cirta","フィリッポス五世":"pella","ペルセウス":"pella","ナビス":"pella"}},{"id":"perseus171","year":-171,"n":"ペルセウスとマケドニアの落日","sub":"前171年","d":"フィリッポス五世の子ペルセウスがギリシア人の心をつかみ、ローマはマケドニアを討つと決めた。年老いたカトーは、栄えるカルタゴをにらんでいる。","owners":{"cartnova":"rome","castulo":"rome","saguntum":"rome","celtiberia":"rome","ilergetes":"rome","lusitania":"rome","gades":"rome","baleares":"rome","syracusae":"rome","leontini":"rome","pergamon":"rome","lydia":"rome","phrygia":"rome","ionia":"rome","caria":"rome","lycia":"rome","bithynia":"rome","galatia":"rome","thessalia":"rome","euboea":"rome","athenae":"rome","corinth":"rome","achaea":"rome","sparta":"rome","aetolia":"rome","sicca":"numi","emporia":"numi","judaea":"sele","damascus":"sele","gaza":"sele"},"dead":["syra"],"rulers":{"rome":"カトー","numi":"マシニッサ","mace":"ペルセウス","sele":"アンティオコス四世","ptol":"プトレマイオス六世"},"joshes":{"rome":"スキピオ・ナシカ"},"wars":[["rome","mace"]],"allies":[["rome","numi"]],"rel":[["sele","ptol",-50],["carth","numi",-50],["rome","carth",-20],["mace","sele",10],["rome","ptol",40],["rome","sele",0]],"moves":{"ポリュビオス":["rome","goz","achaea"]},"boost":{"mace":{"troops":2.0,"gold":3,"wall":15},"sele":{"troops":1.2},"rome":{"troops":0.5,"only":["cartnova","castulo","saguntum","celtiberia","ilergetes","lusitania","gades","baleares","pergamon","lydia","phrygia","ionia","caria","lycia","bithynia","galatia","thessalia","euboea","athenae","corinth","achaea","sparta","aetolia"]}},"locs":{"ペルセウス":"pella","アエミリウス・パウルス（子）":"thessalia","メテッルス":"thessalia","スルピキウス・ガッルス":"thessalia","ポピリウス・ラエナス":"athenae","エウメネス二世":"pergamon","マシニッサ":"cirta","グルッサ":"cirta","アンティオコス四世":"antiochia","カトー":"roma","スキピオ・ナシカ":"roma"}}],"lines":{"duel":{"intro_ins":["{c}の{n}、見参！ 命が惜しくば去れ！","{n}だ！ その首、もらい受ける！","{c}の{n}、推して参る！"],"intro_chi":["{c}の{n}。手合わせ願おう。","{n}と申す。その腕、見せてもらおう。","{c}の{n}。悪いが、ここで死んでもらう。"],"intro_bal":["{c}の{n}、推参！","{c}の{n}、参る！","{n}、お相手いたす！"],"intro_me":["我こそは{c}の{n}！ いざ尋常に勝負！","{c}の{n}である！ 一騎打ちを所望する！"],"taunt":["ぬるい！","どうした、それまでか！","まだまだ！","見えておるわ！","その程度か！","腕が鳴るわ！"],"pain":["ぐっ……！","おのれ……！","くっ、やるな……","まだだ……まだ倒れぬ！"],"sp":["これで終いだ！","覚悟！","受けてみよ、必殺の一撃！","我が武の極み、見せてくれる！"],"flee":["ここは退く！","おのれ、覚えておれ！","今日はこれまでだ！"],"win":["勝負あり！","討ち取ったり！","地中海に我が名を知らしめん！"],"win_spare":["命拾いしたな。","去れ。二度は斬らぬ。"],"lose_live":["ぐっ……退く！","今日のところは……！"],"parry":["受け流した！","読んでいたぞ！"],"lock":["ぬうう……！","押し負けるか！","この力……！"],"unhorse":["落馬した！","馬が……！","ぐあっ……！"],"dismount":["馬を降りて勝負だ！","ここからは徒歩だ、逃がさぬ！","降りてこい、決着をつける！"],"draw":["勝負つかず。両者は互いに退いた。","日が傾き、両者は馬首を返した。"]},"fame":{"own":["都の民は{nm}の名を口々に称えている。","兵たちは{nm}の下で戦いたいと願い出た。","都の重臣たちは{name}の働きを聞き、深く頷いた。","{nm}の凱旋を一目見ようと、沿道に人があふれた。"],"war":["将兵は{nm}の旗を恐れはじめた。","{nm}を討った者に銀十タラントンを与える、と触れが出た。","夜ごと、兵の間で{nm}の噂がささやかれている。","{nm}の名を聞いただけで、新兵が震え上がったという。","将軍たちが集まり、{nm}への備えを論じた。"],"other":["広場でも議場でも{nm}の噂が語られた。","広場の語り部が{nm}の戦いを語り、人だかりができた。","「{name}とはいかなる人物か」と、重臣たちが使節に問うた。","若者たちが{nm}の真似をして木の枝を振り回している。","使者が{nm}の様子を探りに来た。"],"tenkaOwn":["凱旋の行列が都に入ると、人々は{name}に花びらを降らせた。","国中の民が{nm}の名を唱え、神殿に像を立てようという声が上がった。"],"tenkaWar":["{nm}の旗の前に、兵は戦わずして退いた。","「{name}がいる限り、攻めてはならぬ」と命令が下った。","将たちは{nm}と戦場で相まみえることを恐れている。","国境の守りが三倍に増やされた。"],"tenkaOther":["地中海の岸のどこでも、{nm}の名を知らぬ者はない。","使節が{name}のもとへ宝物を届け、誼を通じようとした。","{nm}の武勇は詩に詠まれ、子どもまで歌っている。"],"quote":["面白い。いずれ戦場で相まみえよう。","その名、覚えておこう。","若い芽は、早いうちに摘まねばならぬ。","侮れぬ者が現れたな。","……ほう。","我が首を取れる者がいるとすれば、その男であろう。"]},"histRel":[["ファビウス","ミヌキウス",-20,-40],["ファビウス","ウァッロ",-30,-35],["ファビウス","フラミニウス",-30,-30],["アエミリウス・パウルス","ウァッロ",-40,-30],["ファビウス","マルケッルス",25,25],["カトー","ファビウス",35,25],["カトー","スキピオ",-40,-25],["プブリウス・スキピオ","グナエウス・スキピオ",50,50],["スキピオ","プブリウス・スキピオ",55,50],["スキピオ","ラエリウス",50,60],["スキピオ","ルキウス・スキピオ",45,50],["センプロニウス","プブリウス・スキピオ",-15,-25],["リウィウス","クラウディウス・ネロ",-40,-20],["アッピウス・クラウディウス","マルケッルス",25,25],["ハンニバル","ハスドルバル",55,55],["ハンニバル","マゴ",50,55],["マハルバル","ハンニバル",45,35],["大ハンノ","ハンニバル",-45,-40],["大ハンノ","ハスドルバル・ハエドゥス",40,40],["シュファクス","ガイア",-35,-35],["シュファクス","マシニッサ",-40,-45],["ガイア","マシニッサ",50,45],["フィリッポス五世","デメトリオス（ファロスの）",40,45],["アラトス","デメトリオス（ファロスの）",-35,-30],["アンティオコス三世","アカイオス",-55,-40],["ゼウクシス","アンティオコス三世",50,40],["テオドトス","プトレマイオス四世",-50,-30],["ソシビオス","アガトクレス",35,35],["アガトクレス","アルシノエ三世",-45,-50],["ヒエロン二世","アルキメデス",45,45],["ヒッポクラテス","エピキュデス",55,55],["マルケッルス","アルキメデス",30,-20]]},"events":[{"id":"j_wolves","title":"狼の群れ","w":1.1,"when":{"months":[10,11,12,1],"has":["army"]},"body":"冬の夜、陣の周りに狼の群れが現れた。兵が怯えている。","choices":[{"label":"弓兵に射させる","fx":[["tr",1],["log","狼を追い払った。兵は腕を上げた。","good"]]},{"label":"篝火を増やして夜を明かす","need":{"food":200},"fx":[["food",-200],["log","篝火で狼を遠ざけた。"]]},{"label":"自ら討ちに出る","roll":{"stat":"bu","p":0.55,"ok":[["exp","bu",30],["fame",3],["log","狼の頭を仕留め、兵は喝采した。","good"]],"ng":[["inj",1],["log","狼に噛まれ、傷を負った。","bad"]]}}]},{"id":"j_old_soldier","title":"老兵の話","w":1.3,"when":{"has":["army"]},"body":"焚き火のそばで、白髪の老兵が昔の戦を語りはじめた。ローマとカルタゴがシキリアを二十年以上も争った、先の大戦にいたという。","choices":[{"label":"耳を傾ける","fx":[["exp","tou",25],["log","老兵の話から兵の動かし方を学んだ。"]]},{"label":"ぶどう酒を振る舞う","need":{"gold":"t200"},"fx":[["gold","-t200"],["tr",1],["log","兵たちは老兵を囲んで夜更けまで飲んだ。士気が上がった。","good"]]},{"label":"聞き流す","fx":[]}]},{"id":"j_lost_child","title":"迷子","w":1.0,"when":{"jur":true},"body":"役所の前で子どもが泣いている。親とはぐれたらしい。","choices":[{"label":"部下に親を探させる","fx":[["jur","loyal",2],["log","親が見つかった。民は役所を見直した。","good"]]},{"label":"自ら手を引いて村を回る","fx":[["jur","loyal",4],["exp","mi",20],["log","子を親に返した。あなたの名が村々に広まった。","good"]]},{"label":"放っておく","fx":[["jur","loyal",-2]]}]},{"id":"j_broken_bridge","title":"橋が落ちた","w":0.9,"when":{"jur":true,"months":[6,7,8]},"body":"大雨で管轄の橋が流された。往来が止まり、商人が困っている。","choices":[{"label":"私財で架け直す","need":{"gold":"t400"},"fx":[["gold","-t400"],["jur","comm",3],["jur","loyal",3],["log","新しい橋が架かった。","good"]]},{"label":"民に賦役を課す","fx":[["jur","comm",2],["jur","loyal",-3],["log","民を使って橋を架けた。不満の声もある。"]]},{"label":"国に願い出る","fx":[["merit","-t5"],["jur","comm",1],["log","国の金で橋が架かったが、手柄にはならなかった。"]]}]},{"id":"j_duel_challenge","title":"腕試し","w":1.0,"when":{"track":["mil"],"tier":[1,6]},"body":"宿営地で、他の隊の豪傑が「{name}殿の腕を見たい」と立ち合いを望んでいる。","choices":[{"label":"受けて立つ","roll":{"stat":"bu","p":0.5,"ok":[["exp","bu",35],["fame",4],["log","見事に打ち負かし、兵の尊敬を集めた。","good"]],"ng":[["exp","bu",15],["log","敗れたが、良い稽古になった。"]]}},{"label":"断る","fx":[["fame",-1]]}]},{"id":"j_merchant_caravan","title":"隊商の護衛","w":1.0,"when":{"has":["army"],"track":["mil"]},"body":"大きな隊商が、盗賊の出る道の護衛を頼んできた。礼金をはずむという。","choices":[{"label":"護衛を引き受ける","roll":{"stat":"tou","p":0.7,"ok":[["gold","t350"],["log","隊商を無事に送り届け、礼金を受け取った。","good"]],"ng":[["gold","t120"],["troops",-0.02],["log","盗賊に襲われ兵を失ったが、隊商は守り抜いた。","bad"]]}},{"label":"断る","fx":[]}]},{"id":"j_horse_fair","title":"馬市","w":0.8,"when":{"months":[3,4,5,9]},"body":"黒海の北から来た馬商人が、スキタイの良馬を連れて来た。安くはない。","choices":[{"label":"名馬を買う","need":{"gold":"t600"},"fx":[["gold","-t600"],["item","hu_horse"],["log","良い馬を手に入れた。","good"]]},{"label":"部隊の馬を替える","need":{"gold":"t300"},"fx":[["gold","-t300"],["tr",2],["log","騎兵の馬を良いものに替えた。"]]},{"label":"見るだけ","fx":[]}]},{"id":"j_rumor_court","title":"都の噂","w":1.0,"when":{"tier":[5,10]},"body":"都で「{ruler}が{name}を重く用いるつもりだ」という噂が流れている。妬む者もいる。","who":"ruler","choices":[{"label":"噂を否定して回る","fx":[["bond","boss",4],["log","謙虚な態度が好ましく映った。"]]},{"label":"噂を利用して人を集める","fx":[["bond","boss",-4],["fame",4],["log","名が広まったが、上官は面白くない。"]]}]},{"id":"j_spy_offer","title":"密偵の申し出","w":0.8,"when":{"tier":[4,10],"track":["mil","staff"]},"body":"敵国に通じているという男が、敵の動きを売りたいと言ってきた。","choices":[{"label":"買う","need":{"gold":"t250"},"roll":{"stat":"chi","p":0.65,"ok":[["gold","-t250"],["exp","chi",30],["merit","t6"],["log","敵の布陣を知った。献策が通り、功績になった。","good"]],"ng":[["gold","-t250"],["log","男は偽の情報を売って姿を消した。","bad"]]}},{"label":"捕らえて突き出す","fx":[["merit","t3"],["log","男を捕らえた。小さな手柄になった。"]]},{"label":"追い払う","fx":[]}]},{"id":"j_wounded_veteran","title":"傷病兵","w":1.0,"when":{"has":["army"]},"body":"先の戦で傷ついた兵が、まだ陣に残っている。故郷へ帰してほしいと言う。","choices":[{"label":"路銀を与えて帰す","need":{"gold":"t150"},"fx":[["gold","-t150"],["tr",1],["log","兵たちは将の情けを語り合った。","good"]]},{"label":"陣で養生させる","fx":[["food","-t60"],["log","傷が癒えるまで養った。"]]},{"label":"そのまま使う","fx":[["tr",-1],["log","無理をさせた。兵の間に不満がある。","bad"]]}]},{"id":"j_scholar_debate","title":"学者の論争","w":0.9,"when":{"track":["civ","staff"]},"body":"アカデメイア派とストア派の哲学者が、政のあり方を巡って論争している。意見を求められた。","choices":[{"label":"法を重んじる","fx":[["exp","pol",25],["log","プラトンの『法律』を引くアカデメイア派の哲学者が喜んだ。"]]},{"label":"徳を重んじる","fx":[["exp","mi",25],["log","ストア派の哲学者が喜んだ。"]]},{"label":"どちらも要ると説く","debate":{"vs":"random","ok":[["exp","chi",30],["fame",3],["log","両者を納得させ、名が上がった。","good"]],"ng":[["log","どちらにも軽んじられた。"]]}}]},{"id":"j_flood_refugees","title":"流民","w":0.8,"when":{"jur":true,"months":[7,8,9]},"body":"川向こうの州から流民が流れてきた。受け入れれば民が増えるが、食い扶持が要る。","choices":[{"label":"受け入れる","need":{"food":"t300"},"fx":[["food","-t300"],["jur","hh",0.03],["jur","loyal",3],["log","流民を受け入れた。村が賑わいはじめた。","good"]]},{"label":"追い返す","fx":[["jur","order",2],["jur","loyal",-2],["log","流民を追い返した。"]]}]},{"id":"j_tax_collector","title":"徴税吏の不正","w":0.9,"when":{"jur":true},"body":"徴税吏が民から余分に取り立て、懐に入れていると訴えがあった。","choices":[{"label":"厳しく罰する","fx":[["jur","order",4],["jur","loyal",3],["gold","t100"],["log","不正を正し、没収した金は蔵に入れた。","good"]]},{"label":"見逃して分け前を取る","fx":[["gold","t300"],["jur","loyal",-5],["flag","corrupt",1],["log","金は入ったが、民は見ている。","bad"]]}]},{"id":"j_night_raid_plan","title":"夜襲の献策","w":0.8,"when":{"track":["mil","staff"],"tier":[3,8],"has":["boss"]},"body":"部下が「近くの敵の陣に夜襲をかけましょう」と進言してきた。上官の許しは得ていない。","choices":[{"label":"独断で夜襲する","roll":{"stat":"tou","p":0.5,"ok":[["merit","t15"],["fame",5],["bond","boss",-5],["log","夜襲は成功した。手柄は大きいが上官は渋い顔だ。","good"]],"ng":[["troops",-0.05],["bond","boss",-10],["log","夜襲は見破られ、兵を失った。","bad"]]}},{"label":"上官に献策する","debate":{"vs":"boss","ok":[["merit","t8"],["bond","boss",6],["log","策が採られ、夜襲は成功した。","good"]],"ng":[["log","策は退けられた。"]]}},{"label":"やめさせる","fx":[]}]},{"id":"j_hunt_tiger","title":"獅子退治","w":0.6,"when":{"track":["mil"],"tier":[2,9]},"body":"近くの山に人食いの獅子が出て、村人が震え上がっている。","choices":[{"label":"討ちに行く","roll":{"stat":"bu","p":0.45,"ok":[["fame",8],["exp","bu",40],["log","獅子を仕留めた！ 村人は「ヘラクレスの再来」と呼んで称えた。","good"]],"ng":[["inj",1],["log","獅子に手傷を負わされ、取り逃がした。","bad"]]}},{"label":"兵で山を囲む","need":{"has":["army"]},"fx":[["fame",3],["tr",1],["log","兵で山を囲み、獅子を追い詰めて仕留めた。","good"]]},{"label":"関わらない","fx":[]}]},{"id":"j_letter_home","title":"故郷からの便り","w":0.9,"when":{},"body":"故郷から便りが届いた。母が病だという。","choices":[{"label":"金を送る","need":{"gold":"t200"},"fx":[["gold","-t200"],["log","薬代を送った。母は持ち直したという。","good"]]},{"label":"名医を手配する","need":{"gold":"t500"},"fx":[["gold","-t500"],["fame",2],["log","名医を送った。孝行の評判が立った。","good"]]},{"label":"返事だけ書く","fx":[["log","便りに返事を書いた。"]]}]},{"id":"j_gambling","title":"陣中の博打","w":1.0,"when":{"has":["army"]},"body":"兵たちが陣中でさいころ博打に興じ、喧嘩になった。","choices":[{"label":"厳しく禁じる","fx":[["tr",2],["log","軍律を正した。","good"]]},{"label":"程々に許す","fx":[["log","兵の息抜きとして目をつぶった。"]]},{"label":"自分も加わる","roll":{"stat":"mi","p":0.5,"ok":[["gold","t100"],["log","勝って兵と笑い合った。"]],"ng":[["gold","-t100"],["log","負けて兵に笑われた。"]]}}]},{"id":"j_envoy_gift","title":"他国の使者","w":0.7,"when":{"tier":[6,10]},"body":"他国の使者が、{name}殿に贈り物を携えて訪ねてきた。誼を通じたいという。","choices":[{"label":"受け取る","fx":[["gold","t400"],["bond","ruler",-3],["log","贈り物を受け取った。{ruler}の耳に入るかもしれない。"]]},{"label":"{ruler}に届ける","fx":[["bond","ruler",8],["merit","t4"],["log","贈り物を{ruler}に差し出し、忠義を示した。","good"]]},{"label":"突き返す","fx":[["fame",2],["log","使者を追い返した。潔白は示した。"]]}]},{"id":"j_strange_omen","title":"怪異","w":0.5,"when":{},"body":"夜空に長い尾を引く星が現れた。兵も民も不吉だと騒いでいる。","choices":[{"label":"神々に犠牲を捧げて鎮める","need":{"gold":"t150"},"fx":[["gold","-t150"],["tr",1],["log","牛を捧げて神々をなだめ、人心を鎮めた。"]]},{"label":"「吉兆だ」と言い切る","roll":{"stat":"mi","p":0.6,"ok":[["fame",4],["log","皆が信じ、かえって士気が上がった。","good"]],"ng":[["tr",-1],["log","誰も信じなかった。"]]}}]},{"id":"j_craftsman","title":"名工","w":0.7,"when":{"track":["mil"]},"body":"旅の鍛冶が「良い鉄が手に入った」と武具を売り込んできた。","choices":[{"label":"剣を打ってもらう","need":{"gold":"t500"},"fx":[["gold","-t500"],["item","iron_sword"],["log","名工の剣を手に入れた。","good"]]},{"label":"兵の武具を直させる","need":{"gold":"t250"},"fx":[["gold","-t250"],["tr",2],["log","兵の武具が整った。"]]},{"label":"断る","fx":[]}]},{"id":"j_subordinate_gift","title":"部下の贈り物","w":0.9,"when":{"has":["subs"]},"body":"部下の{sub}が、故郷の名産を携えて挨拶に来た。","who":"sub","choices":[{"label":"喜んで受け取り、共に飲む","fx":[["bond","sub",8],["log","{sub}と酒を酌み交わした。","good"]]},{"label":"受け取り、倍の礼を返す","need":{"gold":"t150"},"fx":[["gold","-t150"],["bond","sub",12],["log","{sub}は感激した。","good"]]},{"label":"贈り物は受けぬと返す","fx":[["bond","sub",-3],["fame",1],["log","清廉な態度を貫いた。"]]}]},{"id":"j_river_crossing","title":"渡し場の争い","w":0.8,"when":{"has":["army"],"months":[4,5,6]},"body":"増水した川の渡し場で、兵と商人が舟の順番を巡って揉めている。","choices":[{"label":"兵を先に渡す","fx":[["log","兵を先に渡した。商人は不満げだ。"]]},{"label":"商人に譲る","fx":[["gold","t80"],["fame",1],["log","商人は礼に金を置いていった。"]]},{"label":"舟を増やさせる","need":{"gold":"t100"},"fx":[["gold","-t100"],["exp","pol",20],["log","舟を増やし、皆が渡れた。"]]}]},{"id":"j_elder_advice","title":"長老の諫言","w":0.7,"when":{"jur":true,"flag":"corrupt"},"body":"村の長老が「このごろ役所の評判が悪うございます」と諫めに来た。","choices":[{"label":"行いを改める","fx":[["flag","corrupt",0],["jur","loyal",4],["log","心を入れ替えた。民は許してくれそうだ。","good"]]},{"label":"聞き流す","fx":[["jur","loyal",-4],["log","長老は肩を落として帰った。","bad"]]}]},{"id":"j_archery_contest","title":"弓の競べ","w":0.8,"when":{"track":["mil"]},"body":"軍中で弓の競べが催される。将も加われという。","choices":[{"label":"加わる","roll":{"stat":"bu","p":0.5,"ok":[["exp","bu",25],["fame",3],["log","的を射抜き、喝采を浴びた。","good"]],"ng":[["exp","bu",10],["log","惜しくも外した。"]]}},{"label":"兵の腕を見る","fx":[["tr",1],["exp","tou",15],["log","弓の上手い兵を見つけ、隊の弓を任せた。"]]}]},{"id":"j_prisoner","title":"捕虜の処遇","w":0.8,"when":{"has":["army"],"track":["mil"],"tier":[3,10]},"body":"先の戦で捕らえた敵兵の処遇を決めねばならない。","choices":[{"label":"解き放つ","fx":[["fame",3],["log","捕虜を放った。敵も味方も{name}の寛さを語った。","good"]]},{"label":"兵に加える","fx":[["troops",0.03],["tr",-1],["log","捕虜を自軍に加えた。練度は少し落ちた。"]]},{"label":"奴隷商人に売る","fx":[["gold","t120"],["fame",-2],["log","捕虜を奴隷商人に売り払い、金に換えた。"]]}]}]};
+const ASSET_LIST = {"face/antiochus3":"face/antiochus3.webp","face/archimedes":"face/archimedes.webp","face/cato":"face/cato.webp","face/fabius":"face/fabius.webp","face/hamilcar_barca":"face/hamilcar_barca.webp","face/hannibal":"face/hannibal.webp","face/hannibal_oneeye":"face/hannibal_oneeye.webp","face/hasdrubal_barca":"face/hasdrubal_barca.webp","face/hiero2":"face/hiero2.webp","face/mago_barca":"face/mago_barca.webp","face/maharbal":"face/maharbal.webp","face/marcellus":"face/marcellus.webp","face/masinissa":"face/masinissa.webp","face/philip5":"face/philip5.webp","face/scipio":"face/scipio.webp","face/sophonisba":"face/sophonisba.webp","face/syphax":"face/syphax.webp","field/arch_abatis_line":"field/arch_abatis_line.webp","field/arch_bay":"field/arch_bay.webp","field/arch_boulders":"field/arch_boulders.webp","field/arch_bridge":"field/arch_bridge.webp","field/arch_camp":"field/arch_camp.webp","field/arch_cape":"field/arch_cape.webp","field/arch_clearing":"field/arch_clearing.webp","field/arch_coast_beach":"field/arch_coast_beach.webp","field/arch_coast_cliff":"field/arch_coast_cliff.webp","field/arch_coast_shoal":"field/arch_coast_shoal.webp","field/arch_coastal_pass":"field/arch_coastal_pass.webp","field/arch_confluence":"field/arch_confluence.webp","field/arch_defile":"field/arch_defile.webp","field/arch_desert_plain":"field/arch_desert_plain.webp","field/arch_dunes":"field/arch_dunes.webp","field/arch_estuary":"field/arch_estuary.webp","field/arch_farmland":"field/arch_farmland.webp","field/arch_forest_edge":"field/arch_forest_edge.webp","field/arch_forest_road":"field/arch_forest_road.webp","field/arch_gorge":"field/arch_gorge.webp","field/arch_groves":"field/arch_groves.webp","field/arch_harbor":"field/arch_harbor.webp","field/arch_headland":"field/arch_headland.webp","field/arch_hillfort":"field/arch_hillfort.webp","field/arch_islands":"field/arch_islands.webp","field/arch_lakeshore":"field/arch_lakeshore.webp","field/arch_lakeshore_defile":"field/arch_lakeshore_defile.webp","field/arch_marsh_causeway":"field/arch_marsh_causeway.webp","field/arch_marsh_edge":"field/arch_marsh_edge.webp","field/arch_oasis":"field/arch_oasis.webp","field/arch_open_sea":"field/arch_open_sea.webp","field/arch_plain":"field/arch_plain.webp","field/arch_ridge":"field/arch_ridge.webp","field/arch_river_bend":"field/arch_river_bend.webp","field/arch_river_crossing":"field/arch_river_crossing.webp","field/arch_river_island":"field/arch_river_island.webp","field/arch_rolling":"field/arch_rolling.webp","field/arch_ruins":"field/arch_ruins.webp","field/arch_saddle":"field/arch_saddle.webp","field/arch_steppe":"field/arch_steppe.webp","field/arch_strait":"field/arch_strait.webp","field/arch_temple_hill":"field/arch_temple_hill.webp","field/arch_terraces":"field/arch_terraces.webp","field/arch_town_edge":"field/arch_town_edge.webp","field/arch_urban":"field/arch_urban.webp","field/arch_valley":"field/arch_valley.webp","field/arch_wadi":"field/arch_wadi.webp","field/arch_wagon_laager":"field/arch_wagon_laager.webp","ground/detail_00_plain":"ground/detail_00_plain.webp","ground/detail_01_rough":"ground/detail_01_rough.webp","ground/detail_02_forest":"ground/detail_02_forest.webp","ground/detail_03_hill":"ground/detail_03_hill.webp","ground/detail_04_mountain":"ground/detail_04_mountain.webp","ground/detail_05_river":"ground/detail_05_river.webp","ground/detail_06_ford":"ground/detail_06_ford.webp","ground/detail_07_marsh":"ground/detail_07_marsh.webp","ground/detail_08_road":"ground/detail_08_road.webp","ground/detail_09_wall":"ground/detail_09_wall.webp","ground/detail_10_gate":"ground/detail_10_gate.webp","ground/detail_11_city":"ground/detail_11_city.webp","ground/detail_12_burnt":"ground/detail_12_burnt.webp","ground/detail_13_path":"ground/detail_13_path.webp","ground/detail_14_gate_broken":"ground/detail_14_gate_broken.webp","ground/detail_15_field":"ground/detail_15_field.webp","ground/detail_16_irrigated":"ground/detail_16_irrigated.webp","ground/detail_17_village":"ground/detail_17_village.webp","ground/detail_18_brook":"ground/detail_18_brook.webp","ground/detail_19_grove":"ground/detail_19_grove.webp","ground/detail_20_rocks":"ground/detail_20_rocks.webp","ground/detail_21_pond":"ground/detail_21_pond.webp","ground/detail_22_sand":"ground/detail_22_sand.webp","ground/detail_23_bridge":"ground/detail_23_bridge.webp","ground/detail_24_steppe":"ground/detail_24_steppe.webp","ground/detail_25_sea":"ground/detail_25_sea.webp","ground/detail_26_shallow_sea":"ground/detail_26_shallow_sea.webp","ground/detail_27_cliff":"ground/detail_27_cliff.webp","ground/detail_28_dunes":"ground/detail_28_dunes.webp","ground/detail_29_orchard":"ground/detail_29_orchard.webp","ground/detail_30_palisade":"ground/detail_30_palisade.webp","ground/detail_31_ditch":"ground/detail_31_ditch.webp","ground/detail_32_abatis":"ground/detail_32_abatis.webp","ground/detail_33_boulder":"ground/detail_33_boulder.webp","ground/detail_34_wagon_fort":"ground/detail_34_wagon_fort.webp","ground/detail_35_stone_wall":"ground/detail_35_stone_wall.webp","ground/detail_36_ruins":"ground/detail_36_ruins.webp","ground/detail_37_houses":"ground/detail_37_houses.webp","ground/detail_38_temple":"ground/detail_38_temple.webp","ground/detail_39_plaza":"ground/detail_39_plaza.webp","nation/banner_carth":"nation/banner_carth.webp","nation/banner_mace":"nation/banner_mace.webp","nation/banner_numi":"nation/banner_numi.webp","nation/banner_ptol":"nation/banner_ptol.webp","nation/banner_rome":"nation/banner_rome.webp","nation/banner_sele":"nation/banner_sele.webp","nation/banner_syra":"nation/banner_syra.webp","nation/emblem_carth":"nation/emblem_carth.webp","nation/emblem_mace":"nation/emblem_mace.webp","nation/emblem_numi":"nation/emblem_numi.webp","nation/emblem_ptol":"nation/emblem_ptol.webp","nation/emblem_rome":"nation/emblem_rome.webp","nation/emblem_sele":"nation/emblem_sele.webp","nation/emblem_syra":"nation/emblem_syra.webp","title/scen_africa204":"title/scen_africa204.webp","title/scen_antiochus192":"title/scen_antiochus192.webp","title/scen_p264":"title/scen_p264.webp","title/scen_perseus171":"title/scen_perseus171.webp","title/scen_start":"title/scen_start.webp","title/title_16x9":"title/title_16x9.webp","title/title_9x16":"title/title_9x16.webp","unit/card_arch":"unit/card_arch.webp","unit/card_cata":"unit/card_cata.webp","unit/card_cataph":"unit/card_cataph.webp","unit/card_chariot":"unit/card_chariot.webp","unit/card_eleph":"unit/card_eleph.webp","unit/card_guard":"unit/card_guard.webp","unit/card_harch":"unit/card_harch.webp","unit/card_hcav":"unit/card_hcav.webp","unit/card_heavy":"unit/card_heavy.webp","unit/card_hept":"unit/card_hept.webp","unit/card_inf":"unit/card_inf.webp","unit/card_ladder":"unit/card_ladder.webp","unit/card_lcav":"unit/card_lcav.webp","unit/card_lembos":"unit/card_lembos.webp","unit/card_militia":"unit/card_militia.webp","unit/card_mount":"unit/card_mount.webp","unit/card_phal":"unit/card_phal.webp","unit/card_quinq":"unit/card_quinq.webp","unit/card_ram":"unit/card_ram.webp","unit/card_shield":"unit/card_shield.webp","unit/card_sling":"unit/card_sling.webp","unit/card_spear":"unit/card_spear.webp","unit/card_tower":"unit/card_tower.webp","unit/card_trireme":"unit/card_trireme.webp","unit/card_velite":"unit/card_velite.webp","unit/card_warb":"unit/card_warb.webp","unit/card_xbow":"unit/card_xbow.webp","unit/ship_hept_top":"unit/ship_hept_top.webp","unit/ship_lembos_top":"unit/ship_lembos_top.webp","unit/ship_quinq_top":"unit/ship_quinq_top.webp","unit/ship_trireme_top":"unit/ship_trireme_top.webp","unit/tok_arch":"unit/tok_arch.webp","unit/tok_cata":"unit/tok_cata.webp","unit/tok_cataph":"unit/tok_cataph.webp","unit/tok_chariot":"unit/tok_chariot.webp","unit/tok_eleph":"unit/tok_eleph.webp","unit/tok_guard":"unit/tok_guard.webp","unit/tok_harch":"unit/tok_harch.webp","unit/tok_hcav":"unit/tok_hcav.webp","unit/tok_heavy":"unit/tok_heavy.webp","unit/tok_inf":"unit/tok_inf.webp","unit/tok_ladder":"unit/tok_ladder.webp","unit/tok_lcav":"unit/tok_lcav.webp","unit/tok_militia":"unit/tok_militia.webp","unit/tok_mount":"unit/tok_mount.webp","unit/tok_phal":"unit/tok_phal.webp","unit/tok_ram":"unit/tok_ram.webp","unit/tok_shield":"unit/tok_shield.webp","unit/tok_sling":"unit/tok_sling.webp","unit/tok_spear":"unit/tok_spear.webp","unit/tok_tower":"unit/tok_tower.webp","unit/tok_velite":"unit/tok_velite.webp","unit/tok_warb":"unit/tok_warb.webp","unit/tok_xbow":"unit/tok_xbow.webp"};
 'use strict';
 /* =========================================================
    地中海覇道 — utilities
@@ -854,6 +872,57 @@ function U_MOD() {
   return U;
 }
 const U = U_MOD();
+
+/* =========================================================
+   地中海覇道 — 外で作った絵（assets/）。
+   build.sh が assets/ の中身を ASSET_LIST に書き出す。無い絵は今までどおりプログラムで描く。
+   設定「絵の素材」で使わない（軽い表示）にもできる。
+   ========================================================= */
+const ASSET = (() => {
+  const LIST = typeof ASSET_LIST !== 'undefined' ? ASSET_LIST : {};
+  const BASE = typeof ASSET_BASE !== 'undefined' ? ASSET_BASE : 'assets/';
+  const imgs = new Map();
+  let onCache = null;
+  const A = {
+    count: Object.keys(LIST).length,
+    on() { if (onCache == null) { try { onCache = localStorage.getItem('chichukai.art') !== '0'; } catch (e) { onCache = true; } } return onCache && A.count > 0; },
+    set(v) { onCache = !!v; try { localStorage.setItem('chichukai.art', v ? '1' : '0'); } catch (e) {} },
+    has: (k) => A.on() && !!LIST[k],
+    url: (k) => (A.has(k) ? BASE + LIST[k] : null),
+    // 読み込み済みの絵（なければ null を返し、読み込みを始める）
+    img(k, cb) {
+      if (!A.has(k)) return null;
+      let r = imgs.get(k);
+      if (!r) {
+        r = { im: new Image(), ok: false, bad: false, cbs: [] };
+        r.im.decoding = 'async';
+        r.im.onload = () => { r.ok = true; const f = r.cbs; r.cbs = []; for (const x of f) try { x(r.im); } catch (e) {} };
+        r.im.onerror = () => { r.bad = true; const f = r.cbs; r.cbs = []; for (const x of f) try { x(null); } catch (e) {} };
+        r.im.src = BASE + LIST[k];
+        imgs.set(k, r);
+      }
+      if (r.ok) return r.im;
+      if (cb && !r.bad) r.cbs.push(cb);
+      return null;
+    },
+    preload: (keys) => Promise.all(keys.filter(A.has).map((k) => new Promise((res) => { if (A.img(k, res)) res(); else setTimeout(res, 9000); }))),
+    keys: (prefix) => Object.keys(LIST).filter((k) => k.startsWith(prefix)),
+    // 地面40種の名（D.TILE の順）
+    TILE: ['plain', 'rough', 'forest', 'hill', 'mountain', 'river', 'ford', 'marsh', 'road', 'wall', 'gate', 'city', 'burnt', 'path', 'gate_broken', 'field', 'irrigated', 'village', 'brook', 'grove', 'rocks', 'pond', 'sand', 'bridge', 'steppe', 'sea', 'shallow_sea', 'cliff', 'dunes', 'orchard', 'palisade', 'ditch', 'abatis', 'boulder', 'wagon_fort', 'stone_wall', 'ruins', 'houses', 'temple', 'plaza'],
+    tileKey: (t) => 'ground/detail_' + String(t).padStart(2, '0') + '_' + A.TILE[t],
+    // 小さく縮めた絵（毎回の縮小を避ける）
+    _small: new Map(),
+    small(k, size) {
+      const key = k + '|' + size; let c = A._small.get(key);
+      if (c) return c;
+      const im = A.img(k); if (!im) return null;
+      c = document.createElement('canvas'); c.width = size; c.height = Math.round(size * im.naturalHeight / im.naturalWidth);
+      const g = c.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(im, 0, 0, c.width, c.height);
+      A._small.set(key, c); return c;
+    },
+  };
+  return A;
+})();
 
 /* =========================================================
    地中海覇道 — static data
@@ -7707,7 +7776,7 @@ A.def({ id: 'shihei', cat: 'land', n: '私兵募集', ap: 1, d: '私領で兵を
     const lim = Math.min(cap - have, Math.round(10 + me.land.fac.barracks * 25 + me.land.hh * 0.01));
     const maxN = Math.min(lim, Math.floor(me.gold / per));
     if (maxN < 1) return `金が足りない（1人あたり金${per}）。`;
-    const ty = await HOOK.choose({ title: '募る兵種', choices: D.UT_TRAINABLE.filter(t => A.canField(t)).map(t => ({ v: t, label: D.UT[t].n, sub: D.UT[t].desc })).concat([{ v: null, label: 'やめる' }]) });
+    const ty = await HOOK.choose({ title: '募る兵種', choices: D.UT_TRAINABLE.filter(t => A.canField(t)).map(t => ({ v: t, label: D.UT[t].n, sub: D.UT[t].desc, img: (G.me && G.off[G.me.oid] && ASSET.url('unit/card_' + G.off[G.me.oid].c + '_' + t)) || ASSET.url('unit/card_' + t) })).concat([{ v: null, label: 'やめる' }]) });
     if (!ty) return null;
     const add = await HOOK.number({ title: `${D.UT[ty].n}を何人募る？`, body: `一度に募れるのは${U.num(lim)}人まで（兵舎と与えられた村で増える）。1人あたり金${per}・毎月 兵糧2.5袋と金15がかかる。\n私兵 ${U.num(have)}／上限${U.num(cap)}　金 ${U.fmt(me.gold)}`, min: 1, max: maxN, value: maxN, unit: '人', info: (n) => `金${U.fmt(n * per)}` });
     if (!add) return null;
@@ -14603,6 +14672,9 @@ V.drawTile = (i, initial) => {
   if (t === D.T.BURNT) { for (let k = 0; k < 5; k++) { g.fillStyle = 'rgba(20,18,15,0.5)'; g.fillRect(x + rnd() * TP, y + rnd() * TP, 2, 2); } }
   if (!initial && t === D.T.FOREST) V.drawTrees(i);
 };
+// 兵の駒（真上から見た絵）と軍船の絵
+V.tokImg = (t) => (typeof ASSET !== 'undefined' ? ASSET.small('unit/tok_' + t, 96) : null);
+V.shipImg = (t) => (typeof ASSET !== 'undefined' ? ASSET.small('unit/ship_' + t + '_top', 256) : null);
 V.drawTrees = (i) => {
   const bt = V.bt, TP = V.TP, g = V.tctx, rnd = V.trng;
   const c = i % bt.cols, r = Math.floor(i / bt.cols);
@@ -14864,10 +14936,13 @@ V.drawUnit = (u) => {
     ctx.fillRect(-u.w / 2, -u.h / 2, u.w, u.h);
     ctx.strokeRect(-u.w / 2, -u.h / 2, u.w, u.h);
     ctx.fillStyle = '#5a4026';
-    if (u.t === 'ram') { ctx.fillRect(-u.w * 0.15, -u.h * 0.7, u.w * 0.3, u.h * 0.8); }
+    const stk = V.tokImg(u.t);
+    if (stk) { const s = Math.max(u.w, u.h) * 1.15; ctx.drawImage(stk, -s / 2, -s / 2, s, s); }
+    else if (u.t === 'ram') { ctx.fillRect(-u.w * 0.15, -u.h * 0.7, u.w * 0.3, u.h * 0.8); }
     else { ctx.strokeStyle = '#5a4026'; ctx.lineWidth = 1.2 / z * 2; for (let k = -2; k <= 2; k++) { ctx.beginPath(); ctx.moveTo(-u.w / 2, k * u.h / 5); ctx.lineTo(u.w / 2, k * u.h / 5); ctx.stroke(); } }
   } else {
-    const FP = figs ? { head: new Path2D(), wep: new Path2D(), horse: new Path2D(), cart: new Path2D(), shield: new Path2D(), hw: 0 } : null;
+    const tok = figs ? V.tokImg(u.t) : null, toks = tok ? [] : null;
+    const FP = figs && !tok ? { head: new Path2D(), wep: new Path2D(), horse: new Path2D(), cart: new Path2D(), shield: new Path2D(), hw: 0 } : null;
     // 伍ごとの四角は色ごとにまとめて塗る（呼び出しを減らす）
     const fills = new Map(), over = new Map(); let wiP = null;
     const add = (m, k, x, y, w, h) => { let p = m.get(k); if (!p) { p = new Path2D(); m.set(k, p); } p.rect(x, y, w, h); };
@@ -14885,11 +14960,13 @@ V.drawUnit = (u) => {
       add(fills, fill, x, y, w, h);
       if (tint && c.mor < 28) add(over, `rgba(220,60,40,${(0.18 + 0.3 * (1 - Math.floor(c.mor / 7) * 7 / 28)).toFixed(2)})`, x, y, w, h);
       if (hit) add(over, 'rgba(255,240,220,0.55)', x, y, w, h);
-      if (figs) V.addFigures(FP, u, c, lx + jx, ly + jy, w, h);
+      if (tok) toks.push(lx + jx, ly + jy, Math.min(w, h) * 1.3);
+      else if (figs) V.addFigures(FP, u, c, lx + jx, ly + jy, w, h);
       if (c.wi === -1) { if (!wiP) wiP = new Path2D(); wiP.rect(lx - w / 2, ly - h / 2, w, h); }
     }
     for (const [k, p] of fills) { ctx.fillStyle = k; ctx.fill(p); }
     for (const [k, p] of over) { ctx.fillStyle = k; ctx.fill(p); }
+    if (tok && toks.length) { const ga = ctx.globalAlpha; ctx.globalAlpha = ga * 0.95; for (let k = 0; k < toks.length; k += 3) { const s = toks[k + 2]; ctx.drawImage(tok, toks[k] - s / 2, toks[k + 1] - s / 2, s, s); } ctx.globalAlpha = ga; }
     if (wiP) { ctx.strokeStyle = V.colors.bronze; ctx.lineWidth = 2 / z; ctx.stroke(wiP); }
     if (FP) {
       if (u.cls === 'cav' || u.cls === 'chr') { ctx.fillStyle = '#5b3f28'; ctx.fill(FP.horse); if (u.cls === 'chr') { ctx.fillStyle = '#3a2a1a'; ctx.fill(FP.cart); } }
@@ -14919,6 +14996,7 @@ V.drawShips = (u, col, outline, sel) => {
   const deck = V.shade(col, own ? 0.1 : 0.04), hullC = '#5e4026', hullD = '#3b2817';
   const detail = Bm * z > 3, crowd = Bm * z > 6;
   const no = u.ut.crew >= 200 ? 9 : u.ut.crew >= 100 ? 7 : u.ut.crew >= 60 ? 6 : 4;
+  const sim = V.shipImg(u.t);
   for (const c of u.cells) {
     if (c.n <= 0) continue;
     const [lx, ly] = B.cellLocal(u, c);
@@ -14927,14 +15005,28 @@ V.drawShips = (u, col, outline, sel) => {
     if (frac < 0.45) ctx.rotate(Math.sin(c.r * 3 + c.c * 1.7) * 0.14 * (1 - frac));
     // 航跡
     if (moving) { ctx.strokeStyle = `rgba(236,246,250,${Math.min(0.55, 0.15 + fast * 0.4).toFixed(2)})`; ctx.lineWidth = Math.max(0.7 / z, Bm * 0.12); ctx.beginPath(); ctx.moveTo(-Bm * 0.45, L * 0.45); ctx.lineTo(-Bm * 1.3, L * (0.95 + fast * 0.5)); ctx.moveTo(Bm * 0.45, L * 0.45); ctx.lineTo(Bm * 1.3, L * (0.95 + fast * 0.5)); ctx.stroke(); }
+    if (sim) {
+      // 外で作った軍船の絵（船首を前＝上に向ける）。甲板に国の色の帯を重ねる
+      ctx.save(); ctx.rotate(-Math.PI / 2);
+      const len = L * 1.12, wid = len * sim.height / sim.width;
+      ctx.drawImage(sim, -len / 2, -wid / 2, len, wid);
+      ctx.restore();
+      const ga = ctx.globalAlpha;
+      ctx.beginPath(); ctx.ellipse(0, L * 0.03, Bm * 0.2, L * 0.3, 0, 0, 6.2832);
+      ctx.globalAlpha = ga * (morV ? 0.8 : 0.6); ctx.fillStyle = morV ? V.morColor(Math.round(c.mor / 4) * 4) : deck; ctx.fill();
+      if (!morV && c.mor < 28) { ctx.fillStyle = 'rgba(220,60,40,0.4)'; ctx.fill(); }
+      ctx.globalAlpha = ga;
+      if (hit) { ctx.fillStyle = 'rgba(255,240,220,0.45)'; ctx.beginPath(); ctx.ellipse(0, 0, Bm * 0.55, L * 0.5, 0, 0, 6.2832); ctx.fill(); }
+    }
     // 櫂（漕いでいるときは揺れる）
-    if (detail) {
+    if (detail && !sim) {
       const ph = moving ? now * (6 + fast * 6) + c.c : 0;
       ctx.strokeStyle = 'rgba(42,30,18,0.85)'; ctx.lineWidth = Math.max(0.5 / z, Bm * 0.07); ctx.beginPath();
       for (let k = 0; k < no; k++) { const y0 = -L * 0.26 + k * L * 0.52 / (no - 1), sw = Math.sin(ph + k * 0.25) * L * 0.05; ctx.moveTo(-Bm * 0.42, y0); ctx.lineTo(-Bm * 1.2, y0 + sw); ctx.moveTo(Bm * 0.42, y0); ctx.lineTo(Bm * 1.2, y0 + sw); }
       ctx.stroke();
     }
     // 船体
+    if (!sim) {
     ctx.beginPath();
     ctx.moveTo(0, -L * 0.5);
     ctx.quadraticCurveTo(Bm * 0.56, -L * 0.3, Bm * 0.5, 0);
@@ -14948,11 +15040,12 @@ V.drawShips = (u, col, outline, sel) => {
     if (!morV && c.mor < 28) { ctx.fillStyle = 'rgba(220,60,40,0.35)'; ctx.fill(); }
     // 衝角（青銅）
     ctx.fillStyle = '#b8925a'; ctx.beginPath(); ctx.moveTo(0, -L * 0.57); ctx.lineTo(Bm * 0.15, -L * 0.45); ctx.lineTo(-Bm * 0.15, -L * 0.45); ctx.closePath(); ctx.fill();
+    }
     // 櫓（大型艦）・渡し橋（ローマ）
     if (detail && u.ut.range) { ctx.fillStyle = '#7a5a3a'; ctx.fillRect(-Bm * 0.22, -L * 0.14, Bm * 0.44, L * 0.12); ctx.fillRect(-Bm * 0.22, L * 0.16, Bm * 0.44, L * 0.1); }
     if (detail && u.corvus) { const down = u.grappleT > now; ctx.strokeStyle = '#3a2a18'; ctx.lineWidth = Math.max(0.6 / z, Bm * 0.14); ctx.beginPath(); ctx.moveTo(0, -L * 0.2); ctx.lineTo(down ? Bm * 0.2 : 0, down ? -L * 0.66 : -L * 0.4); ctx.stroke(); }
     // 海兵
-    if (crowd) { ctx.fillStyle = 'rgba(245,232,205,0.92)'; const nm = Math.max(1, Math.round(5 * frac)); for (let k = 0; k < nm; k++) { ctx.beginPath(); ctx.arc((k % 2 - 0.5) * Bm * 0.26, -L * 0.2 + k * L * 0.1, Bm * 0.07, 0, 6.2832); ctx.fill(); } }
+    if (crowd && !sim) { ctx.fillStyle = 'rgba(245,232,205,0.92)'; const nm = Math.max(1, Math.round(5 * frac)); for (let k = 0; k < nm; k++) { ctx.beginPath(); ctx.arc((k % 2 - 0.5) * Bm * 0.26, -L * 0.2 + k * L * 0.1, Bm * 0.07, 0, 6.2832); ctx.fill(); } }
     // 傷み（煙）
     if (frac < 0.5 && detail) { ctx.fillStyle = 'rgba(40,36,32,0.42)'; ctx.beginPath(); ctx.arc(Bm * 0.12, L * 0.1, Bm * 0.4 * (1 - frac), 0, 6.2832); ctx.fill(); }
     if (c.wi === -1) { ctx.strokeStyle = V.colors.bronze; ctx.lineWidth = 2 / z; ctx.stroke(); }
@@ -16093,6 +16186,8 @@ V.decorateField = (g, L, tx, ty) => {
   g.lineCap = 'round'; g.lineJoin = 'round';
   const inT = (x, y, pad) => x > x0 - pad && x < x1 + pad && y > y0 - pad && y < y1 + pad;
   const season = V.SEASON(), snow = bt.weather === 'snow';
+  // 0. 外で作った地面の絵を、模様（明暗）だけ重ねる。色・季節・雪は今の描画のまま
+  if (L >= 4 && typeof ASSET !== 'undefined' && ASSET.on()) V.texField(g, x0, y0, x1, y1, px);
   // 1. 道（縁と轍）
   if (L >= 2 && bt.feat) for (const rd of bt.feat.roads) {
     const pts = rd.pts; let any = false; for (const p of pts) if (inT(p[0], p[1], rd.w * 3 + span * 0.1)) { any = true; break; }
@@ -16212,6 +16307,33 @@ V.decorateField = (g, L, tx, ty) => {
   g.setTransform(1, 0, 0, 1, 0, 0);
 };
 /* 毎回の地表：タイル＋焼け跡・城壁の様子 */
+V.texField = (g, x0, y0, x1, y1, px) => {
+  const bt = V.bt, f = bt.fine, cell = f.cell;
+  const c0 = Math.max(0, Math.floor(x0 / cell) - 1), r0 = Math.max(0, Math.floor(y0 / cell) - 1), c1 = Math.min(f.cols, Math.ceil(x1 / cell) + 1), r1 = Math.min(f.rows, Math.ceil(y1 / cell) + 1);
+  const paths = new Map();
+  for (let r = r0; r < r1; r++) for (let c = c0; c < c1; c++) {
+    const t = f.type[r * f.cols + c]; let p = paths.get(t);
+    if (!p) { if (!V.detailTex(t)) { paths.set(t, null); continue; } p = new Path2D(); paths.set(t, p); }
+    if (p) p.rect(c * cell - px * 0.5, r * cell - px * 0.5, cell + px, cell + px);
+  }
+  const rep = (bt.W / bt.cols) * 3;
+  g.save(); g.globalCompositeOperation = 'soft-light'; g.globalAlpha = 0.95;
+  for (const [t, p] of paths) {
+    if (!p) continue;
+    const pat = g.createPattern(V.detailTex(t), 'repeat');
+    if (pat.setTransform) pat.setTransform(new DOMMatrix().scale(rep / 256));
+    g.fillStyle = pat; g.fill(p);
+  }
+  g.restore();
+};
+// 地面の絵の模様（明るさの平均を真ん中に寄せた灰色）
+V._detail = new Map();
+V.detailTex = (t) => {
+  if (V._detail.has(t)) return V._detail.get(t);
+  const im = ASSET.img(ASSET.tileKey(t));   // tools/assets.py が作った灰色の模様（256×256）
+  if (im) V._detail.set(t, im);
+  return im;
+};
 V.drawGround = () => {
   const bt = V.bt, ctx = V.ctx, z = V.cam.z;
   const [ox, oy] = V.w2s(0, 0);
@@ -16843,18 +16965,29 @@ V3.drawShips = (u, d, col, lt, morV) => {
     if (!top.every(Boolean) || !bot.every(Boolean)) continue;
     ctx.fillStyle = hullS;
     for (let i = 0; i < P.length; i++) { const j = (i + 1) % P.length; ctx.beginPath(); ctx.moveTo(bot[i][0], bot[i][1]); ctx.lineTo(bot[j][0], bot[j][1]); ctx.lineTo(top[j][0], top[j][1]); ctx.lineTo(top[i][0], top[i][1]); ctx.closePath(); ctx.fill(); }
-    ctx.fillStyle = hit ? '#fff1dc' : hullT; ctx.beginPath(); top.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); ctx.fill();
-    const inner = P.map(([a, b2]) => pt(lx + a * Bm * 0.55, ly + b2 * L * 0.72, fb - sink + 0.05));
-    if (inner.every(Boolean)) { ctx.fillStyle = morV ? V.morColor(Math.round(c.mor / 4) * 4) : deck; ctx.beginPath(); inner.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); ctx.fill(); }
-    // 衝角
-    const r0 = pt(lx, ly - L * 0.58, 0.4), r1 = pt(lx + Bm * 0.12, ly - L * 0.47, 0.6), r2 = pt(lx - Bm * 0.12, ly - L * 0.47, 0.6);
-    if (r0 && r1 && r2) { ctx.fillStyle = '#b8925a'; ctx.beginPath(); ctx.moveTo(r0[0], r0[1]); ctx.lineTo(r1[0], r1[1]); ctx.lineTo(r2[0], r2[1]); ctx.closePath(); ctx.fill(); }
-    // 櫂
-    if (pxL > 14) {
-      const no = u.ut.crew >= 200 ? 8 : u.ut.crew >= 100 ? 6 : 4, ph = u.spd > 0.3 * bt.p ? now * 7 + c.c : 0;
-      ctx.strokeStyle = 'rgba(40,28,16,.8)'; ctx.lineWidth = Math.max(0.6, pxL * 0.012); ctx.beginPath();
-      for (let k = 0; k < no; k++) { const yy = ly + (-0.24 + k * 0.48 / (no - 1)) * L, sw = Math.sin(ph + k * 0.3) * L * 0.05; for (const sg of [-1, 1]) { const a = pt(lx + sg * Bm * 0.45, yy, fb * 0.6 - sink), b2 = pt(lx + sg * Bm * 1.25, yy + sw, 0.05); if (a && b2) { ctx.moveTo(a[0], a[1]); ctx.lineTo(b2[0], b2[1]); } } }
-      ctx.stroke();
+    const sim = V.shipImg ? V.shipImg(u.t) : null;
+    if (sim) {
+      // 外で作った軍船の絵を甲板の高さに貼る（船首が前）。国の色は甲板の帯で
+      const hL = L * 0.56, Wd = hL * 2 * sim.height / sim.width;
+      const A0 = pt(lx - Wd / 2, ly + hL, fb - sink), A1 = pt(lx - Wd / 2, ly - hL, fb - sink), A2 = pt(lx + Wd / 2, ly + hL, fb - sink);
+      if (A0 && A1 && A2) { ctx.save(); ctx.transform((A1[0] - A0[0]) / sim.width, (A1[1] - A0[1]) / sim.width, (A2[0] - A0[0]) / sim.height, (A2[1] - A0[1]) / sim.height, A0[0], A0[1]); ctx.drawImage(sim, 0, 0); ctx.restore(); }
+      const inner = P.map(([a, b2]) => pt(lx + a * Bm * 0.38, ly + b2 * L * 0.6, fb - sink + 0.05));
+      if (inner.every(Boolean)) { const ga = ctx.globalAlpha; ctx.globalAlpha = ga * 0.6; ctx.fillStyle = morV ? V.morColor(Math.round(c.mor / 4) * 4) : deck; ctx.beginPath(); inner.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); ctx.fill(); ctx.globalAlpha = ga; }
+      if (hit) { const ga = ctx.globalAlpha; ctx.globalAlpha = ga * 0.45; ctx.fillStyle = '#fff1dc'; ctx.beginPath(); top.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); ctx.fill(); ctx.globalAlpha = ga; }
+    } else {
+      ctx.fillStyle = hit ? '#fff1dc' : hullT; ctx.beginPath(); top.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); ctx.fill();
+      const inner = P.map(([a, b2]) => pt(lx + a * Bm * 0.55, ly + b2 * L * 0.72, fb - sink + 0.05));
+      if (inner.every(Boolean)) { ctx.fillStyle = morV ? V.morColor(Math.round(c.mor / 4) * 4) : deck; ctx.beginPath(); inner.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])); ctx.closePath(); ctx.fill(); }
+      // 衝角
+      const r0 = pt(lx, ly - L * 0.58, 0.4), r1 = pt(lx + Bm * 0.12, ly - L * 0.47, 0.6), r2 = pt(lx - Bm * 0.12, ly - L * 0.47, 0.6);
+      if (r0 && r1 && r2) { ctx.fillStyle = '#b8925a'; ctx.beginPath(); ctx.moveTo(r0[0], r0[1]); ctx.lineTo(r1[0], r1[1]); ctx.lineTo(r2[0], r2[1]); ctx.closePath(); ctx.fill(); }
+      // 櫂
+      if (pxL > 14) {
+        const no = u.ut.crew >= 200 ? 8 : u.ut.crew >= 100 ? 6 : 4, ph = u.spd > 0.3 * bt.p ? now * 7 + c.c : 0;
+        ctx.strokeStyle = 'rgba(40,28,16,.8)'; ctx.lineWidth = Math.max(0.6, pxL * 0.012); ctx.beginPath();
+        for (let k = 0; k < no; k++) { const yy = ly + (-0.24 + k * 0.48 / (no - 1)) * L, sw = Math.sin(ph + k * 0.3) * L * 0.05; for (const sg of [-1, 1]) { const a = pt(lx + sg * Bm * 0.45, yy, fb * 0.6 - sink), b2 = pt(lx + sg * Bm * 1.25, yy + sw, 0.05); if (a && b2) { ctx.moveTo(a[0], a[1]); ctx.lineTo(b2[0], b2[1]); } } }
+        ctx.stroke();
+      }
     }
     // 帆柱と帆（交戦中は帆をたたむ）
     const m0 = pt(lx, ly - L * 0.06, fb - sink), m1 = pt(lx, ly - L * 0.06, fb - sink + L * 0.5);
@@ -18040,9 +18173,43 @@ PORT.beardD = (g, p, rw, rh, my, mw) => {
     if (bs !== 'curly') { g.lineWidth = 0.6; g.strokeStyle = 'rgba(0,0,0,.25)'; for (let i = -2; i <= 2; i++) { g.beginPath(); g.moveTo(i * 2.5, rh * 1.0); g.quadraticCurveTo(i * 2.8, rh * 1.4, i * 2, rh * 1.7); g.stroke(); } }
   }
 };
+// 外で作った肖像（歴史上の人物だけ。名は assets/face/ の名）
+PORT.FACES = Object.fromEntries('ファビウス:fabius,フルウィウス:fulvius,プブリウス・スキピオ:p_scipio,グナエウス・スキピオ:cn_scipio,センプロニウス:sempronius,マルケッルス:marcellus,フラミニウス:flaminius,アエミリウス・パウルス:aemilius_paullus,ウァッロ:varro,ミヌキウス:minucius,グラックス:gracchus,クラウディウス・ネロ:claudius_nero,リウィウス:livius,アッピウス・クラウディウス:appius_claudius,スキピオ:scipio,ラエリウス:laelius,ルキウス・スキピオ:l_scipio,カトー:cato,フラミニヌス:flamininus,アエミリウス・パウルス（子）:paullus_mac,アキリウス・グラブリオ:glabrio,スキピオ・ナシカ:nasica,小スキピオ:aemilianus,ムンミウス:mummius,ポピリウス・ラエナス:popillius,ラエウィヌス:laevinus,マルキウス:marcius,トルクァトゥス:torquatus,ポストゥミウス:postumius,リキニウス・クラッスス:crassus_dives,ウァレリウス・フラックス:valerius_flaccus,エンニウス:ennius,マンリウス・ウルソ:manlius_vulso,エウメネス二世:eumenes2,ティベリウス・グラックス:t_gracchus,メテッルス:metellus,スルピキウス・ガッルス:sulpicius_gallus,ラエリウス（子）:laelius_minor,アッピウス・カウデクス:appius_caudex,マニウス・ウァレリウス:m_valerius,ドゥイリウス:duilius,レグルス:regulus,ルタティウス・カトゥルス:lutatius,クラウディウス・プルケル:claudius_pulcher,大ハンノ:hanno_great,ハスドルバル・ハエドゥス:hasdrubal_haedus,ハンニバル:hannibal,ハスドルバル:hasdrubal_barca,マゴ:mago_barca,マハルバル:maharbal,ハンノ（ボミルカルの子）:hanno_bomilcar,ハスドルバル（ギスコの子）:hasdrubal_gisco,ボミルカル:bomilcar,ヒミルコ:himilco,ムットゥネス:muttines,カルタロ:carthalo,インディビリス:indibilis,ハスドルバル・カルウス:hasdrubal_calvus,ハンノ（ハミルカルの子）:hanno_hamilcar,ハスドルバル（最後の将）:hasdrubal_last,ハンノ（老将）:hanno_elder,ハンニバル（ギスコの子）:hannibal_gisco,クサンティッポス:xanthippus,ハミルカル・バルカ:hamilcar_barca,シュファクス:syphax,ガイア:gaia,マシニッサ:masinissa,ウェルミナ:vermina,ソフォニスバ:sophonisba,ミキプサ:micipsa,グルッサ:gulussa,フィリッポス五世:philip5,アラトス:aratus,デメトリオス（ファロスの）:demetrius_pharos,タウリオン:taurion,ヘラクレイデス:heracleides,フィロポイメン:philopoemen,スコパス:scopas,ナビス:nabis,ペルセウス:perseus,デメトリオス（王子）:demetrius_prince,ポリュビオス:polybius,アンティゴノス二世:antigonus2,アンティオコス三世:antiochus3,ゼウクシス:zeuxis,アカイオス:achaeus,テオドトス:theodotus,ニカルコス:nicarchus,アンティパトロス:antipater,ポリュクセニダス:polyxenidas,セレウコス四世:seleucus4,アンティオコス四世:antiochus4,ヘリオドロス:heliodorus,アンティオコス一世:antiochus1,プトレマイオス四世:ptolemy4,ソシビオス:sosibius,アガトクレス:agathocles,アンドロマコス:andromachus,ポリュクラテス:polycrates,エケクラテス:echecrates,フォクシダス:phoxidas,アルシノエ三世:arsinoe3,アリストメネス:aristomenes,プトレマイオス五世:ptolemy5,クレオパトラ一世:cleopatra1,プトレマイオス二世:ptolemy2,クレモニデス:chremonides,ヒエロン二世:hiero2,ゲロン:gelon,アルキメデス:archimedes,ヒエロニュモス:hieronymus,アドラノドロス:adranodorus,ヒッポクラテス:hippocrates_syr,エピキュデス:epicydes'.split(',').map(s => s.split(':')));
+// 年齢・時期による差し替え（絵があるときだけ）：[名, 差し替えの名, その年月より前か後か]
+PORT.FACE_ALT = [['hannibal', 'hannibal_old', -196, 1, 1], ['hannibal', 'hannibal_oneeye', -217, 4, 1], ['scipio', 'scipio_young', -209, 1, 0], ['masinissa', 'masinissa_old', -170, 1, 1], ['philip5', 'philip5_old', -185, 1, 1]];
+PORT.faceKey = (o, expr) => {
+  if (!o || typeof ASSET === 'undefined' || !ASSET.on()) return null;
+  const real = o.hist || (o.id != null && typeof G !== 'undefined' && G && G.off && G.off[o.id] && G.off[o.id].hist && G.off[o.id].n === o.n);
+  let k = real && PORT.FACES[o.n];
+  if (!k || !ASSET.has('face/' + k)) return null;
+  if (typeof G !== 'undefined' && G && G.year != null) {
+    const ym = G.year * 12 + (G.month || 1);
+    for (const [b, alt, y, m, after] of PORT.FACE_ALT) if (b === k && ASSET.has('face/' + alt) && (after ? ym >= y * 12 + m : ym < y * 12 + m)) { k = alt; break; }
+  }
+  if (expr && expr !== 'normal' && ASSET.has('face/' + k + '_' + expr)) return 'face/' + k + '_' + expr;
+  return 'face/' + k;
+};
+PORT.imgCanvas = (o, im, fk, size, dpr, opt) => {
+  const key = `img|${fk}|${size}|${opt.seal ? 's' : ''}`;
+  let c = PORT._cache.get(key);
+  if (c) return c;
+  c = document.createElement('canvas');
+  c.width = Math.round(size * dpr); c.height = Math.round(size * dpr);
+  c.style.width = size + 'px'; c.style.height = size + 'px';
+  const g = c.getContext('2d');
+  g.imageSmoothingQuality = 'high';
+  g.drawImage(im, 0, 0, c.width, c.height);
+  const sei = opt.seal && (o.sei || PORT.params(o).sei);
+  if (sei) { g.scale(c.width / 100, c.height / 100); g.fillStyle = '#a8382a'; g.beginPath(); g.arc(86, 86, 8.4, 0, 6.2832); g.fill(); g.strokeStyle = 'rgba(246,236,214,.55)'; g.lineWidth = 0.8; g.beginPath(); g.arc(86, 86, 6.9, 0, 6.2832); g.stroke(); g.fillStyle = '#f6ecd6'; g.font = `10px ${V.fontHead ? V.fontHead() : 'serif'}`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(sei).slice(0, 1), 86, 86.6); }
+  if (PORT._cache.size >= PORT.MAX) PORT._cache.delete(PORT._cache.keys().next().value);
+  PORT._cache.set(key, c);
+  return c;
+};
 PORT.canvas = (o, size, opt = {}) => {
   size = Math.max(16, Math.round(size || 48));
   const dpr = Math.min(2, (typeof window !== 'undefined' && window.devicePixelRatio) || 1);
+  const fk = PORT.faceKey(o, opt.expr);
+  if (fk) { const im = ASSET.img(fk, () => PORT._cache.clear()); if (im) return PORT.imgCanvas(o, im, fk, size, dpr, opt); }
   const p = PORT.params(o);
   const key = `${p.seed}|${size}|${p.age >> 2}|${p.sig}|${opt.dark ? 'd' : ''}${opt.seal ? 's' : ''}${opt.noBg ? 'n' : ''}|${opt.expr || ''}`;
   let c = PORT._cache.get(key);
@@ -18137,7 +18304,7 @@ UI.choose = (o) => UI.modal((box, close) => {
   UI.head(box, o);
   const ch = U.h('div', { class: 'choices' });
   for (const c of o.choices) {
-    const b = U.h('button', { class: 'ch', disabled: !!c.disabled }, U.h('b', {}, c.label), c.sub ? U.h('small', {}, c.sub) : null);
+    const b = U.h('button', { class: 'ch' + (c.img ? ' ch-im' : ''), disabled: !!c.disabled }, c.img ? U.h('img', { class: 'ch-img', src: c.img, alt: '', loading: 'lazy', decoding: 'async' }) : null, U.h('b', {}, c.label), c.sub ? U.h('small', {}, c.sub) : null);
     b.onclick = () => close(c.v);
     ch.append(b);
   }
@@ -18310,7 +18477,7 @@ UI.setScale = (i) => {
 UI.applyScale = () => { const i = UI.scaleIdx(); if (i) UI.setScale(i); };
 
 /* ---------- 共通の小物 ---------- */
-UI.cseal = (c, size) => { const C = D.COUNTRIES[c] || D.BANDIT; return `<span class="cseal" style="background:${C.color === '#26262d' ? '#2e2e38' : C.color}${size ? `;width:${size}px;height:${size}px;font-size:${Math.round(size * 0.58)}px` : ''}">${C.name}</span>`; };
+UI.cseal = (c, size) => { const C = D.COUNTRIES[c] || D.BANDIT; const em = typeof ASSET !== 'undefined' && ASSET.url('nation/emblem_' + c); if (em) return `<span class="cseal em"${size ? ` style="width:${size}px;height:${size}px"` : ''}><img src="${em}" alt="${C.name}" decoding="async"></span>`; return `<span class="cseal" style="background:${C.color === '#26262d' ? '#2e2e38' : C.color}${size ? `;width:${size}px;height:${size}px;font-size:${Math.round(size * 0.58)}px` : ''}">${C.name}</span>`; };
 UI.bar = (v, max = 100, cls = '') => `<div class="bar ${cls}"><i style="width:${U.clamp(v / max * 100, 0, 100)}%"></i></div>`;
 UI.statName = { bu: '武力', tou: '統率', chi: '知力', pol: '政治', mi: '魅力' };
 UI.styleName = { ins: '本能型', chi: '知略型', bal: '均衡型' };
@@ -18320,7 +18487,9 @@ UI.title = async () => {
   UI.show('title');
   const root = U.$('#scr-title');
   const has = await SAVE.hasAny();
-  root.innerHTML = `
+  const art = UI.titleArt();
+  root.classList.toggle('has-art', !!art);
+  root.innerHTML = `${art}
     <canvas class="title-map" aria-hidden="true"></canvas>
     <div class="title-wrap">
       <div class="title-main">
@@ -18338,12 +18507,20 @@ UI.title = async () => {
       <p class="title-note">紀元前218年、ハンニバルがアルペスを越える。ローマ・カルタゴ・マケドニア・セレウコス朝・プトレマイオス朝・シュラクサイ・ヌミディアの七つの国が地中海の覇を競う。伍長から君主まで、好きな立場で覇権を目指せ。${typeof ACH !== 'undefined' && Object.keys(ACH.saved()).length ? `<br><span class="note">解いた実績 ${Object.keys(ACH.saved()).length} / ${D.ACH.length}</span>` : ''}</p>
     </div>`;
   UI.drawTitleMap(U.$('.title-map', root));
+  // 肖像・紋章・地面の絵を先に読んでおく（遊び始めるころには揃う）
+  ASSET.preload([...ASSET.keys('face/'), ...ASSET.keys('nation/emblem_')]);
+  setTimeout(() => ASSET.preload([...ASSET.keys('ground/'), ...ASSET.keys('unit/tok_'), ...ASSET.keys('unit/ship_')]), 1500);
   if (typeof PWA !== 'undefined') setTimeout(() => { try { PWA.banner(); } catch (e) {} }, 1200);
   U.$('#t-new').onclick = () => UI.setupCountry();
   if (has) U.$('#t-cont').onclick = () => UI.loadMenu();
   U.$('#t-load').onclick = () => UI.loadMenu(true);
   const tm = U.$('#t-mod'); if (tm) tm.onclick = () => UI.modMenu();
   U.$('#t-help').onclick = () => UI.help();
+};
+UI.titleArt = () => {
+  const a = ASSET.url('title/title_16x9'), b = ASSET.url('title/title_9x16');
+  if (!a && !b) return '';
+  return `<picture class="title-art" aria-hidden="true">${a && b ? `<source media="(max-aspect-ratio: 4/5)" srcset="${b}">` : ''}<img src="${a || b}" alt="" decoding="async"></picture>`;
 };
 UI.drawTitleMap = (cv) => {
   // 画面いっぱいに地中海の地形を薄く敷く（地図の絵は全体マップと同じタイルを使う）
@@ -18460,12 +18637,13 @@ UI.setupCountry = () => {
     const pop = U.sum(ps, p => p.pop);
     const n = ps.length;
     const dead = deadC.has(c);
-    return `<button class="pick ${UI.cfg.country === c ? 'on' : ''}" data-c="${c}" ${dead ? 'disabled' : ''}>
+    const ban = ASSET.url('nation/banner_' + c);
+    return `<button class="pick ${UI.cfg.country === c ? 'on' : ''}${ban ? ' has-ban' : ''}" data-c="${c}" ${dead ? 'disabled' : ''}>${ban ? `<img class="pick-ban" src="${ban}" alt="" loading="lazy" decoding="async">` : ''}
       <div class="row">${UI.cseal(c)}<div><b>${C.name}</b><br><small>${dead ? 'すでに滅んでいる' : C.trait}</small></div></div>
       <small>${C.desc}</small>
       <small class="num">${dead ? '－' : `${n}州・人口${pop}万`}</small></button>`;
   }).join('');
-  const scen = D.SCENARIOS.map(sc => `<button class="pick scn ${SC.id === sc.id ? 'on' : ''}" data-s="${sc.id}"><b>${sc.sub}　${sc.n}</b><small>${sc.d}</small></button>`).join('');
+  const scen = D.SCENARIOS.map(sc => `<button class="pick scn ${SC.id === sc.id ? 'on' : ''}" data-s="${sc.id}">${ASSET.url('title/scen_' + sc.id) ? `<img class="scn-art" src="${ASSET.url('title/scen_' + sc.id)}" alt="" loading="lazy" decoding="async">` : ''}<b>${sc.sub}　${sc.n}</b><small>${sc.d}</small></button>`).join('');
   root.innerHTML = `<div class="flow pad"><div class="flow-in">
     <div class="step-h"><h2>時代と国</h2><small>一 / 三</small></div>
     <div class="sec-h">始まりの年</div>
@@ -19547,12 +19725,14 @@ UI.menu = async () => {
     { v: 'load', label: '読み込み' },
     { v: 'snd', label: `音：${SND.on ? 'あり' : 'なし'}`, sub: '効果音と音楽' },
     { v: 'cutin', label: `演出：${UI.CUTIN_ON() ? 'あり' : 'なし'}`, sub: '開戦・討ち取り・勝敗などのカットイン' },
+    ...(ASSET.count ? [{ v: 'art', label: `絵の素材：${ASSET.on() ? '使う' : '使わない'}`, sub: '外で作った絵（肖像・戦場・兵など）。使わないと軽い表示になる' }] : []),
     { v: 'scale', label: `文字の大きさ：${UI.scaleName()}`, sub: '標準 → 大きめ → 特大 の順に切り替わる' },
     { v: 'help', label: '遊び方' },
     { v: 'title', label: 'タイトルへ', sub: '自動保存されている' },
     { v: null, label: '閉じる' },
   ] });
   if (k === 'snd') { SND.toggle(); UI.toast(SND.on ? '音を鳴らす' : '音を消した'); return; }
+  if (k === 'art') { ASSET.set(!ASSET.on()); PORT._cache.clear(); ASSET._small.clear(); UI.toast(ASSET.on() ? '絵の素材を使う' : '絵の素材を使わない（軽い表示）'); UI.refresh(); return; }
   if (k === 'scale') { UI.setScale((UI.scaleIdx() + 1) % 3); UI.toast(`文字の大きさ：${UI.scaleName()}`); UI.refresh(); return; }
   if (k === 'cutin') { G.flags.cutin = !UI.CUTIN_ON(); UI.toast(UI.CUTIN_ON() ? 'カットインあり' : 'カットインなし'); return; }
   if (k === 'log') return UI.logView();
@@ -22287,6 +22467,8 @@ UI.fieldChoice = async (spec) => {
   return spec;
 };
 // 候補の札（絵・名・型・利）
+UI.HIST_FIELD = Object.fromEntries('カンナエ:cannae,トラシメヌス:trasimene,トレビア:trebia,ティキヌス:ticinus,ザマ:zama,メタウルス:metaurus,イリパ:ilipa,バエクラ:baecula,キュノスケファライ:cynoscephalae,マグネシア:magnesia,ラフィア:raphia,パニオン:panium,ピュドナ:pydna,テラモン:telamon,クラスティディウム:clastidium,ベネウェントゥム:beneventum,ヘルドニア:herdonia,アスクルム:asculum,バグラダスの戦場:bagradas,大平原:great_plains,テルモピュライ:thermopylae,テンペの谷:tempe,キリキアの門:cilician_gates,アオオスの隘路:aoos,カウディウムの谷:caudium,アルペスの峠:alps_pass,ピュレネの峠:pyrenees_pass,シリアの門:syrian_gates,ミュライ:mylae,エクノムス:ecnomus,ドレパナ:drepana,アエガテス:aegates,リリュバエウム沖:lilybaeum,シュラクサイの大港:syracuse_harbor,エブロ河口:ebro,サラミス:salamis,アルテミシオン:artemisium,アイゴスポタモイ:aegospotami,キオス:chios,ラデ:lade,ミュオネソス:myonessus,エウリュメドン:eurymedon,キュプロスのサラミス:salamis_cyprus'.split(',').map(s => s.split(':')));
+UI.fieldArt = (e) => (e.hist && ASSET.url('field/hist_' + UI.HIST_FIELD[e.hist])) || ASSET.url('field/arch_' + e.arch);
 UI.fieldCard = (e, aSide, opt = {}) => {
   const A = FLD.ARCH[e.arch];
   const card = U.h('div', { class: 'fcard' + (opt.on ? ' on' : '') });
@@ -22297,6 +22479,8 @@ UI.fieldCard = (e, aSide, opt = {}) => {
     + `<ul class="fhints">${A.hints.map(h => `<li>${U.esc(h)}</li>`).join('')}</ul>`
     + (e.d ? `<small class="note">${U.esc(e.d)}</small>` : '')
     + (opt.note ? `<small class="fnote">${opt.note}</small>` : '');
+  const art = UI.fieldArt(e);
+  if (art) body.prepend(U.h('img', { class: 'farch', src: art, alt: '', decoding: 'async' }));
   card.append(pic, body);
   return card;
 };

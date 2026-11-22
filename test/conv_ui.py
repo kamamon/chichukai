@@ -1,0 +1,28 @@
+import json
+from playwright.sync_api import sync_playwright
+errors = []
+with sync_playwright() as p:
+    b = p.chromium.launch()
+    ctx = b.new_context(viewport={'width': 390, 'height': 844}, device_scale_factor=2, has_touch=True, is_mobile=True)
+    page = ctx.new_page()
+    page.on('pageerror', lambda e: errors.append(f'[pageerror] {e}'))
+    page.on('console', lambda m: errors.append(f'[{m.type}] {m.text}') if m.type == 'error' and 'ERR_FAILED' not in m.text else None)
+    page.route('**/fonts.googleapis.com/**', lambda r: r.abort())
+    page.route('**/fonts.gstatic.com/**', lambda r: r.abort())
+    page.goto('file:///home/claude/roma/test/page.html')
+    page.wait_for_function("typeof GEO !== 'undefined' && GEO.built", timeout=60000)
+    page.evaluate("""(() => { S.newGame({ country: 'carth', rank: 'goz', min: 'chiso', sei: '李', mei: '牧', age: 30, stats: { bu: 80, tou: 85, chi: 70, pol: 50, mi: 60 }, traits: ['kobu'], style: 'bal', diff: 1 }); G.me.gold = 200000; G.me.ap = 0; UI.main('army'); document.querySelector('#allot').scrollIntoView(); })()""")
+    page.wait_for_timeout(300)
+    page.locator('.ag[data-g=""] [data-mv]').first.click(); page.wait_for_timeout(200)
+    page.fill('#mv-n', '400'); page.dispatch_event('#mv-n', 'input')
+    page.locator('.mv-ty [data-ty]').first.click(); page.wait_for_timeout(100)
+    label = page.locator('[data-conv]').inner_text()
+    print('conv button:', label, 'disabled', page.locator('[data-conv]').is_disabled())
+    page.evaluate("document.querySelector('.mv-ed').scrollIntoView({block:'center'})")
+    page.screenshot(path='/home/claude/roma/test/shots/v_conv.png')
+    before = page.evaluate("G.me.gold")
+    page.locator('[data-conv]').click(); page.wait_for_timeout(300)
+    print('gold', before, '->', page.evaluate("G.me.gold"), 'ap', page.evaluate("G.me.ap"))
+    print('squads', page.evaluate("G.me.army.sq.filter(s => !s.ld).map(s => s.t + ':' + s.n)"))
+    print('ERRORS:', json.dumps(errors, ensure_ascii=False))
+    b.close()

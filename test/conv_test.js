@@ -1,0 +1,27 @@
+globalThis.UI = { debate: async () => 0 };
+const M = require('./bundle.js');
+const { S, A, D, U } = M;
+const ok = (c, m) => { if (!c) { console.error('NG', m); process.exitCode = 1; } else console.log('ok', m); };
+S.newGame({ country: 'rome', rank: 'shog', min: 'chiso', sei: '李', mei: '信', age: 25, stats: { bu: 80, tou: 75, chi: 60, pol: 50, mi: 60 }, traits: ['kobu'], style: 'ins', diff: 1 });
+const G = M.getG(), A2 = G.me.army;
+G.me.gold = 1e7; G.me.ap = 0;
+const hen = A.list.find(a => a.id === 'hensei');
+ok(hen.ap === 0 && A.status(hen).ok, 'conversion is free of 任務状 and usable with 0 AP');
+const s = A2.sq.find(x => x.t === 'inf' && !x.ld);
+const tot = S.armyTotal(), maxT = U.sum(A2.sq.filter(x => !x.pv), x => x.max), g0 = G.me.gold;
+const t = D.UT_TRAINABLE.find(x => x !== 'inf' && A.canField(x));
+const n = A.convertTroops(s.id, 700, t);
+ok(n === 700 && S.armyTotal() === tot && U.sum(A2.sq.filter(x => !x.pv), x => x.max) === maxT, `converted 700 inf to ${t}, totals preserved`);
+ok(G.me.gold === g0 - 700 * A.convCost(t), 'gold charged');
+const ns = A2.sq.find(x => x.t === t && !x.ld);
+ok(ns && ns.tr <= Math.round(s.tr * 0.6) + 40, 'new squad training lowered');
+G.me.gold = A.convCost(t) - 1;
+ok(A.convertTroops(s.id, 100, t) === 0, 'not enough gold -> nothing converted');
+(async () => {
+  G.me.gold = 1e6; G.me.ap = 0;
+  M.HOOK.choose = async (o) => (o.choices.find(c => !c.disabled && c.v != null) || o.choices[0]).v;
+  M.HOOK.number = async (o) => 50;
+  const msg = await A.run(hen);
+  ok(/転換した/.test(msg) && G.me.ap === 0, `action works at 0 AP: ${msg}`);
+  console.log(process.exitCode ? 'FAILED' : 'ALL OK');
+})();
